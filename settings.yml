@@ -1,0 +1,92 @@
+name: 수집 설정 변경
+
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: '새 카카오 쇼케이스 URL (변경하지 않으면 비워두기)'
+        required: false
+        type: string
+      start_date:
+        description: '시작일 YYYY-MM-DD (변경하지 않으면 비워두기)'
+        required: false
+        type: string
+      end_date:
+        description: '종료일 YYYY-MM-DD (변경하지 않으면 비워두기)'
+        required: false
+        type: string
+      collect_now:
+        description: '설정 저장 후 오늘 데이터도 수집'
+        required: false
+        default: true
+        type: boolean
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: kakao-showcase-collector
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: 저장소 가져오기
+        uses: actions/checkout@v4
+
+      - name: Python 준비
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: 설정 저장
+        env:
+          NEW_URL: ${{ inputs.url }}
+          NEW_START_DATE: ${{ inputs.start_date }}
+          NEW_END_DATE: ${{ inputs.end_date }}
+        run: python scripts/update_config.py
+
+      - name: 필요하면 즉시 수집
+        if: ${{ inputs.collect_now }}
+        run: python cloud_collect.py
+
+      - name: 변경 내용 저장
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add config.json data/showcase_history.json index.html
+          if git diff --cached --quiet; then
+            echo "저장할 변경 내용이 없습니다."
+          else
+            git commit -m "수집 설정 변경"
+            git push
+          fi
+
+      - name: Pages 배포 파일 준비
+        run: |
+          rm -rf site
+          mkdir site
+          cp index.html site/index.html
+
+      - name: GitHub Pages 준비
+        uses: actions/configure-pages@v5
+
+      - name: Pages 파일 업로드
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: './site'
+
+  deploy:
+    needs: update
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: GitHub Pages 배포
+        id: deployment
+        uses: actions/deploy-pages@v4

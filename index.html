@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>카카오 쇼케이스 조회수 기록</title>
+<style>
+:root{--bg:#f5f7fb;--card:#fff;--text:#172033;--muted:#687386;--line:#dfe5ee;--accent:#365cff;--good:#0f8a4b;--bad:#b64a3a;--sticky:#fbfcff}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:Segoe UI,"Noto Sans KR","Malgun Gothic",sans-serif}
+.wrap{max-width:1900px;margin:0 auto;padding:24px}.head{display:flex;gap:16px;justify-content:space-between;align-items:flex-end;flex-wrap:wrap}.head h1{font-size:26px;margin:0 0 8px}.sub{color:var(--muted);font-size:14px}.cards{display:grid;grid-template-columns:repeat(4,minmax(170px,1fr));gap:12px;margin:18px 0}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 16px;box-shadow:0 2px 8px rgba(30,45,70,.04)}.label{font-size:12px;color:var(--muted);margin-bottom:6px}.big{font-size:20px;font-weight:700}
+.sourcebar,.controls{display:flex;gap:8px;flex-wrap:wrap;background:var(--card);padding:12px;border:1px solid var(--line)}.sourcebar{border-radius:12px 12px 0 0;align-items:center}.sourcebar label{font-size:13px;font-weight:700}.sourcebar input{flex:1;min-width:340px}.sourcebar input,.controls input,.controls select,.controls button,.sourcebar button{height:38px;border:1px solid #cbd4e1;border-radius:8px;background:#fff;padding:0 11px;font:inherit}.sourcebar button,.controls button{cursor:pointer}.sourcebar button.primary,.controls button.primary{background:var(--accent);border-color:var(--accent);color:#fff}.sourcehint{width:100%;font-size:12px;color:var(--muted)}.sourcehint.ok{color:var(--good)}.sourcehint.err{color:var(--bad)}
+.controls{border-top:0;border-radius:0}.controls input{min-width:280px}.controls .count{margin-left:auto;align-self:center;color:var(--muted);font-size:13px}
+.tablebox{overflow:auto;max-height:calc(100vh - 365px);background:#fff;border:1px solid var(--line);border-top:0;border-radius:0 0 12px 12px}.data{border-collapse:separate;border-spacing:0;min-width:max-content;width:100%;font-size:13px}.data th,.data td{padding:9px 10px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);white-space:nowrap;text-align:center}.data th{position:sticky;top:0;z-index:8;background:#edf2ff;font-weight:700}.data th.sortable{cursor:pointer;user-select:none}.data th.sortable:hover{background:#dfe7ff}.sortmark{display:inline-block;min-width:14px;margin-left:4px;color:var(--accent)}.data td.title{text-align:left;max-width:380px;overflow:hidden;text-overflow:ellipsis}.data td.muted{color:#98a1b2}.data tr:hover td{background:#f7f9ff}.data tr:hover td.sticky{background:#f7f9ff}.data a{color:#214dde;text-decoration:none}.data a:hover{text-decoration:underline}.pos{color:var(--good);font-weight:700}.neg{color:var(--bad);font-weight:700}.status-missing{color:#9a6b16}
+.sticky{position:sticky;z-index:5;background:var(--sticky)}th.sticky{z-index:10;background:#e7edff}.c1{left:0;width:82px;min-width:82px;max-width:82px}.c2{left:82px;width:310px;min-width:310px;max-width:310px}.c3{left:392px;width:120px;min-width:120px;max-width:120px}.c4{left:512px;width:72px;min-width:72px;max-width:72px;box-shadow:5px 0 8px rgba(30,45,70,.06)}.title a{display:block;overflow:hidden;text-overflow:ellipsis}
+.foot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:12px;margin-top:10px}.empty{padding:40px;text-align:center;color:var(--muted)}
+@media(max-width:800px){.wrap{padding:12px}.cards{grid-template-columns:repeat(2,1fr)}.controls input,.sourcebar input{min-width:180px}.tablebox{max-height:calc(100vh - 440px)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head"><div><h1>카카오 쇼케이스 조회수 기록</h1><div class="sub">날짜별 공개 조회수 누적 · 공개 표기 수준에 맞춰 1,000회 단위로 반올림</div></div><div class="sub" id="generated"></div></div>
+  <div class="cards">
+    <div class="card"><div class="label">최근 수집 시각</div><div class="big" id="lastTime">-</div></div>
+    <div class="card"><div class="label">이번 목록 작품</div><div class="big" id="activeCount">0</div></div>
+    <div class="card"><div class="label">누적 추적 작품</div><div class="big" id="totalCount">0</div></div>
+    <div class="card"><div class="label">수집 회차</div><div class="big" id="captureCount">0</div></div>
+  </div>
+  <div class="sourcebar">
+    <label for="sourceUrl">자동수집 설정</label>
+    <input id="sourceUrl" type="url" spellcheck="false" readonly>
+    <button id="openSettings" class="primary">수집 링크/기간 변경</button>
+    <button id="runNow">지금 한 번 수집</button>
+    <span id="sourceState" class="sourcehint"></span>
+  </div>
+  <div class="controls">
+    <input id="q" type="search" placeholder="제목 · 작가 · 출판사 검색">
+    <select id="genre"><option value="">전체 장르</option></select>
+    <select id="presence"><option value="all">전체 작품</option><option value="active">이번 목록에 있음</option><option value="missing">이번 목록에 없음</option></select>
+    <button id="reset">필터 초기화</button>
+    <button id="excel" class="primary">엑셀 다운로드 (현재 표시)</button>
+    <span class="count" id="shown"></span>
+  </div>
+  <div class="tablebox"><table class="data"><thead id="thead"></thead><tbody id="tbody"></tbody></table><div class="empty" id="empty" hidden>조건에 맞는 작품이 없습니다.</div></div>
+  <div class="foot"><span id="source"></span><span>열 제목을 클릭하면 오름차순/내림차순 정렬됩니다. 새 수집 후 브라우저에서 새로고침하면 갱신됩니다.</span></div>
+</div>
+<script id="payload" type="application/json">{"times":["2026-09-11 21:07:10"],"rows":[{"id":"70288249","genre":"판타지","title":"룬 복사로 세계 최강","promotion":"","rank":1,"values":[75000],"delta":null,"authors":"역주체","publisher":"판시아","url":"https://page.kakao.com/content/70288249","status":"수집됨"},{"id":"70183779","genre":"판타지","title":"챌린저급 플레이어의 회귀","promotion":"","rank":2,"values":[68000],"delta":null,"authors":"기사혼","publisher":"에이시스미디어","url":"https://page.kakao.com/content/70183779","status":"수집됨"},{"id":"70229719","genre":"판타지","title":"라면 한 그릇에 종결템 받아옴","promotion":"","rank":2,"values":[68000],"delta":null,"authors":"하얀곶감","publisher":"펜타그램","url":"https://page.kakao.com/content/70229719","status":"수집됨"},{"id":"70077717","genre":"판타지","title":"전생 네크로맨서는 헌터가 너무 쉽다","promotion":"","rank":4,"values":[46000],"delta":null,"authors":"오토마톤G","publisher":"HAKSANNOVEL","url":"https://page.kakao.com/content/70077717","status":"수집됨"},{"id":"70325388","genre":"판타지","title":"EX급 정령들로 전능의 올마스터가 되었다","promotion":"","rank":5,"values":[45000],"delta":null,"authors":"리슝","publisher":"고렘팩토리","url":"https://page.kakao.com/content/70325388","status":"수집됨"},{"id":"70074127","genre":"판타지","title":"역대급 드루이드의 돈지랄 힐링라이프","promotion":"","rank":6,"values":[40000],"delta":null,"authors":"은남","publisher":"고렘팩토리","url":"https://page.kakao.com/content/70074127","status":"수집됨"},{"id":"70265846","genre":"판타지","title":"회귀한 네크로맨서가 종말에 대비함","promotion":"","rank":7,"values":[38000],"delta":null,"authors":"달거북이","publisher":"디앤씨미디어","url":"https://page.kakao.com/content/70265846","status":"수집됨"},{"id":"70286298","genre":"무협","title":"역천서생","promotion":"","rank":8,"values":[36000],"delta":null,"authors":"조성완","publisher":"디앤씨미디어","url":"https://page.kakao.com/content/70286298","status":"수집됨"},{"id":"69284655","genre":"판타지","title":"튜토리얼 탑에서 몬스터 우주전함을 얻었다","promotion":"","rank":9,"values":[35000],"delta":null,"authors":"무티","publisher":"고렘팩토리","url":"https://page.kakao.com/content/69284655","status":"수집됨"},{"id":"70206671","genre":"판타지","title":"내가 키운 버프가 너무 강함","promotion":"","rank":10,"values":[34000],"delta":null,"authors":"냉면화채","publisher":"삼양씨앤씨","url":"https://page.kakao.com/content/70206671","status":"수집됨"},{"id":"70285092","genre":"무협","title":"화산파 천재 의원","promotion":"","rank":11,"values":[32000],"delta":null,"authors":"상현","publisher":"디앤씨미디어","url":"https://page.kakao.com/content/70285092","status":"수집됨"},{"id":"70285815","genre":"무협","title":"남궁세가 막내아들은 전생헌터","promotion":"","rank":12,"values":[26000],"delta":null,"authors":"곽승록","publisher":"고렘팩토리","url":"https://page.kakao.com/content/70285815","status":"수집됨"},{"id":"70263480","genre":"판타지","title":"시한부 헌터가 계속 살아남","promotion":"","rank":13,"values":[22000],"delta":null,"authors":"클쓰마쓰","publisher":"삼양씨앤씨","url":"https://page.kakao.com/content/70263480","status":"수집됨"},{"id":"70318214","genre":"무협","title":"야장수선전","promotion":"","rank":13,"values":[22000],"delta":null,"authors":"감상적 추계, 적월","publisher":"코코스토리즈","url":"https://page.kakao.com/content/70318214","status":"수집됨"},{"id":"70167834","genre":"판타지","title":"펜싱 천재가 헌터로 사는 법","promotion":"","rank":15,"values":[21000],"delta":null,"authors":"방울뱀","publisher":"스토리튠즈","url":"https://page.kakao.com/content/70167834","status":"수집됨"},{"id":"70312883","genre":"현판","title":"닥터 사이코패스","promotion":"","rank":15,"values":[21000],"delta":null,"authors":"노델","publisher":"삼양씨앤씨","url":"https://page.kakao.com/content/70312883","status":"수집됨"},{"id":"70183754","genre":"현판","title":"도깨비 호텔을 물려받았다","promotion":"","rank":17,"values":[20000],"delta":null,"authors":"왜그래놀라","publisher":"에이시스미디어","url":"https://page.kakao.com/content/70183754","status":"수집됨"},{"id":"70316665","genre":"무협","title":"수선잡화점","promotion":"","rank":17,"values":[20000],"delta":null,"authors":"작야검신, 묵경","publisher":"코코스토리즈","url":"https://page.kakao.com/content/70316665","status":"수집됨"},{"id":"70249787","genre":"무협","title":"천하제일사제","promotion":"","rank":19,"values":[16000],"delta":null,"authors":"김석진","publisher":"인타임","url":"https://page.kakao.com/content/70249787","status":"수집됨"},{"id":"70346769","genre":"무협","title":"혈마전생","promotion":"","rank":20,"values":[15000],"delta":null,"authors":"박격포","publisher":"스토리튠즈","url":"https://page.kakao.com/content/70346769","status":"수집됨"},{"id":"70357799","genre":"무협","title":"천마에게 회귀당했다","promotion":"","rank":21,"values":[13000],"delta":null,"authors":"서준백","publisher":"로크미디어","url":"https://page.kakao.com/content/70357799","status":"수집됨"},{"id":"70286258","genre":"판타지","title":"사도세자가 수원역을 숨김","promotion":"","rank":22,"values":[12000],"delta":null,"authors":"구사","publisher":"디앤씨미디어","url":"https://page.kakao.com/content/70286258","status":"수집됨"},{"id":"70363049","genre":"현판","title":"킥을 보는 천재 요리사","promotion":"","rank":22,"values":[12000],"delta":null,"authors":"선선","publisher":"판시아","url":"https://page.kakao.com/content/70363049","status":"수집됨"},{"id":"70169063","genre":"판타지","title":"SSR 창기사가 죽창딜을 (안) 숨김","promotion":"","rank":24,"values":[10000],"delta":null,"authors":"순살패링","publisher":"다온노블","url":"https://page.kakao.com/content/70169063","status":"수집됨"},{"id":"70339763","genre":"현판","title":"이세계 클라이언트에게 컨펌받기","promotion":"","rank":25,"values":[8000],"delta":null,"authors":"모다한","publisher":"HAKSANNOVEL","url":"https://page.kakao.com/content/70339763","status":"수집됨"},{"id":"70210371","genre":"판타지","title":"이세계의 선녀도령","promotion":"","rank":26,"values":[7000],"delta":null,"authors":"글마","publisher":"스토리작","url":"https://page.kakao.com/content/70210371","status":"수집됨"},{"id":"70206039","genre":"현판","title":"고인물 축구 천재 이번엔 감독이다!","promotion":"","rank":27,"values":[6000],"delta":null,"authors":"으헹헹헹헤","publisher":"올데이즈","url":"https://page.kakao.com/content/70206039","status":"수집됨"},{"id":"70253694","genre":"현판","title":"괴담과 대학원에서 전해드립니다","promotion":"","rank":27,"values":[6000],"delta":null,"authors":"한단오","publisher":"인타임","url":"https://page.kakao.com/content/70253694","status":"수집됨"},{"id":"70332220","genre":"무협","title":"객잔의 와룡","promotion":"","rank":27,"values":[6000],"delta":null,"authors":"햄닛","publisher":"피플앤스토리","url":"https://page.kakao.com/content/70332220","status":"수집됨"},{"id":"70317162","genre":"무협","title":"무극신화","promotion":"","rank":30,"values":[5000],"delta":null,"authors":"단순댁남, 아포가토","publisher":"코코스토리즈","url":"https://page.kakao.com/content/70317162","status":"수집됨"},{"id":"70167163","genre":"판타지","title":"세종대왕이 퇴직금을 안 준다","promotion":"","rank":31,"values":[4000],"delta":null,"authors":"송이젤리","publisher":"현나라","url":"https://page.kakao.com/content/70167163","status":"수집됨"},{"id":"70176082","genre":"판타지","title":"두 번 사는 천재 의사","promotion":"","rank":31,"values":[4000],"delta":null,"authors":"메펜강","publisher":"스토리야","url":"https://page.kakao.com/content/70176082","status":"수집됨"}],"captures":[["2026-09-11 21:07:10","온라인 수집",32,"2026-09-11T21:07:44+09:00","2026-09-11T21:07:55+09:00"]],"source":"https://page.kakao.com/landing/series/list/page/landing/16140/","config":{"start_date":"2026-09-15","end_date":"2099-12-31","url":"https://page.kakao.com/landing/series/list/page/landing/16140/","delay":2.0,"max_pages":100}}</script>
+<script>
+const DATA=JSON.parse(document.getElementById('payload').textContent);
+const GENERATED='2026-09-15 20:08:50';
+const q=document.getElementById('q'), genre=document.getElementById('genre'), presence=document.getElementById('presence');
+const sourceUrl=document.getElementById('sourceUrl'), sourceState=document.getElementById('sourceState');
+let visibleRows=[];
+let sortState={key:DATA.times.length?`time:${DATA.times.length-1}`:'rank',dir:'desc'};
+const fmt=v=>v==null?'':Math.round(Number(v)).toLocaleString('ko-KR');
+const shortTime=t=>t?`${t.slice(5,10)} ${t.slice(11,16)}`:'';
+const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const latest=r=>r.values.length?r.values[r.values.length-1]:null;
+const genres=[...new Set(DATA.rows.map(r=>r.genre).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'ko'));
+for(const g of genres){const o=document.createElement('option');o.value=g;o.textContent=g;genre.appendChild(o)}
+document.getElementById('generated').textContent=`HTML 생성: ${GENERATED} KST`;
+document.getElementById('lastTime').textContent=DATA.times.length?DATA.times[DATA.times.length-1].slice(5):'-';
+document.getElementById('activeCount').textContent=DATA.rows.filter(r=>latest(r)!=null).length.toLocaleString('ko-KR');
+document.getElementById('totalCount').textContent=DATA.rows.length.toLocaleString('ko-KR');
+document.getElementById('captureCount').textContent=DATA.times.length.toLocaleString('ko-KR');
+document.getElementById('source').innerHTML=`현재 기록 대상: <a href="${esc(DATA.source)}" target="_blank" rel="noopener">${esc(DATA.source)}</a>`;
+sourceUrl.value=(DATA.config&&DATA.config.url)||DATA.source||'';
+const startDate=(DATA.config&&DATA.config.start_date)||'-', endDate=(DATA.config&&DATA.config.end_date)||'-';
+sourceState.textContent=`자동수집 기간: ${startDate} ~ ${endDate} · GitHub Actions가 한국 시간 매일 10:00에 실행됩니다.`;
+function githubRepoBase(){
+ if(!location.hostname.endsWith('.github.io')) return null;
+ const owner=location.hostname.split('.')[0];
+ const parts=location.pathname.split('/').filter(Boolean);
+ const repo=parts.length?parts[0]:`${owner}.github.io`;
+ return `https://github.com/${owner}/${repo}`;
+}
+function openWorkflow(name){
+ const base=githubRepoBase();
+ if(!base){alert('GitHub Pages에서 열면 이 버튼으로 설정/수동 수집 화면으로 이동할 수 있습니다.');return;}
+ window.open(`${base}/actions/workflows/${name}`,'_blank','noopener');
+}
+document.getElementById('openSettings').addEventListener('click',()=>openWorkflow('settings.yml'));
+document.getElementById('runNow').addEventListener('click',()=>openWorkflow('collect.yml'));
+
+function sortValue(r,key){
+ if(key.startsWith('time:')) return r.values[Number(key.split(':')[1])] ?? null;
+ if(key==='genre')return r.genre||''; if(key==='title')return r.title||''; if(key==='promotion')return r.promotion||'';
+ if(key==='rank')return r.rank; if(key==='delta')return r.delta; if(key==='authors')return r.authors||'';
+ if(key==='publisher')return r.publisher||''; if(key==='id')return Number(r.id); if(key==='status')return r.status||'';
+ return null;
+}
+function compareRows(a,b){
+ const av=sortValue(a,sortState.key), bv=sortValue(b,sortState.key);
+ if(av==null&&bv==null)return String(a.id).localeCompare(String(b.id));
+ if(av==null)return 1; if(bv==null)return -1;
+ let c;
+ if(typeof av==='number'&&typeof bv==='number') c=av-bv;
+ else c=String(av).localeCompare(String(bv),'ko',{numeric:true,sensitivity:'base'});
+ if(c===0)c=String(a.id).localeCompare(String(b.id));
+ return sortState.dir==='asc'?c:-c;
+}
+function th(label,key,cls=''){
+ const mark=sortState.key===key?(sortState.dir==='asc'?'▲':'▼'):'';
+ return `<th class="sortable ${cls}" data-sort="${esc(key)}">${esc(label)}<span class="sortmark">${mark}</span></th>`;
+}
+function header(){
+ let cells=th('장르','genre','sticky c1')+th('제목','title','sticky c2')+th('프로모션','promotion','sticky c3')+th('순위','rank','sticky c4');
+ cells+=DATA.times.map((t,i)=>th(shortTime(t),`time:${i}`)).join('');
+ cells+=th('증감치','delta')+th('작가명','authors')+th('출판사','publisher')+th('작품 ID','id')+th('상태','status');
+ document.getElementById('thead').innerHTML='<tr>'+cells+'</tr>';
+ document.querySelectorAll('th[data-sort]').forEach(el=>el.addEventListener('click',()=>{
+   const key=el.dataset.sort;
+   if(sortState.key===key) sortState.dir=sortState.dir==='asc'?'desc':'asc';
+   else {sortState.key=key; sortState.dir=(key==='title'||key==='genre'||key==='authors'||key==='publisher'||key==='status')?'asc':'desc';}
+   header(); render();
+ }));
+}
+function filteredSortedRows(){
+ const needle=q.value.trim().toLocaleLowerCase('ko-KR'), g=genre.value, p=presence.value;
+ return DATA.rows.filter(r=>{
+   const active=latest(r)!=null;
+   const text=`${r.title} ${r.authors} ${r.publisher} ${r.id}`.toLocaleLowerCase('ko-KR');
+   return (!needle||text.includes(needle))&&(!g||r.genre===g)&&(p==='all'||(p==='active'&&active)||(p==='missing'&&!active));
+ }).sort(compareRows);
+}
+function render(){
+ const rows=filteredSortedRows(); visibleRows=rows;
+ const htmlRows=rows.map(r=>{
+   const active=latest(r)!=null; const delta=r.delta;
+   const vals=r.values.map(v=>`<td class="${v==null?'muted':''}">${v==null?'—':fmt(v)}</td>`).join('');
+   const dc=delta==null?'':(delta>0?'pos':delta<0?'neg':'');
+   const ds=delta==null?'—':`${delta>0?'+':''}${fmt(delta)}`;
+   const stat=(r.status||(!active?'이번 목록에 없음':''));
+   return `<tr><td class="sticky c1">${esc(r.genre)}</td><td class="sticky c2 title"><a href="${esc(r.url)}" target="_blank" rel="noopener" title="${esc(r.title)}">${esc(r.title)}</a></td><td class="sticky c3">${esc(r.promotion)}</td><td class="sticky c4">${r.rank??'—'}</td>${vals}<td class="${dc}">${ds}</td><td>${esc(r.authors)}</td><td>${esc(r.publisher)}</td><td>${esc(r.id)}</td><td class="${!active?'status-missing':''}">${esc(stat)}</td></tr>`;
+ }).join('');
+ document.getElementById('tbody').innerHTML=htmlRows;
+ document.getElementById('shown').textContent=`${rows.length.toLocaleString('ko-KR')} / ${DATA.rows.length.toLocaleString('ko-KR')}개 표시`;
+ document.getElementById('empty').hidden=rows.length!==0;
+}
+
+[q,genre,presence].forEach(el=>el.addEventListener(el===q?'input':'change',render));
+document.getElementById('reset').addEventListener('click',()=>{q.value='';genre.value='';presence.value='all';sortState={key:DATA.times.length?`time:${DATA.times.length-1}`:'rank',dir:'desc'};header();render();q.focus()});
+
+// ----- 외부 라이브러리 없이 XLSX(OOXML ZIP, 무압축) 생성 -----
+function xmlEsc(v){return String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[m])).replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g,'');}
+function colName(n){let s='';while(n>0){n--;s=String.fromCharCode(65+n%26)+s;n=Math.floor(n/26)}return s}
+const enc=new TextEncoder();
+const CRC_TABLE=(()=>{let t=new Uint32Array(256);for(let n=0;n<256;n++){let c=n;for(let k=0;k<8;k++)c=(c&1)?0xEDB88320^(c>>>1):c>>>1;t[n]=c>>>0}return t})();
+function crc32(bytes){let c=0xFFFFFFFF;for(const b of bytes)c=CRC_TABLE[(c^b)&255]^(c>>>8);return (c^0xFFFFFFFF)>>>0}
+function u16(n){return new Uint8Array([n&255,(n>>>8)&255])}
+function u32(n){return new Uint8Array([n&255,(n>>>8)&255,(n>>>16)&255,(n>>>24)&255])}
+function concat(parts){const len=parts.reduce((s,p)=>s+p.length,0),out=new Uint8Array(len);let o=0;for(const p of parts){out.set(p,o);o+=p.length}return out}
+function dosDateTime(d=new Date()){let year=Math.max(1980,d.getFullYear());return {time:(d.getHours()<<11)|(d.getMinutes()<<5)|(d.getSeconds()>>1),date:((year-1980)<<9)|((d.getMonth()+1)<<5)|d.getDate()}}
+function zipStore(files){
+ const locals=[],centrals=[];let offset=0;const dt=dosDateTime();
+ for(const [name,text] of Object.entries(files)){
+   const nb=enc.encode(name),db=typeof text==='string'?enc.encode(text):text,crc=crc32(db);
+   const local=concat([u32(0x04034b50),u16(20),u16(0x0800),u16(0),u16(dt.time),u16(dt.date),u32(crc),u32(db.length),u32(db.length),u16(nb.length),u16(0),nb,db]);
+   const central=concat([u32(0x02014b50),u16(20),u16(20),u16(0x0800),u16(0),u16(dt.time),u16(dt.date),u32(crc),u32(db.length),u32(db.length),u16(nb.length),u16(0),u16(0),u16(0),u16(0),u32(0),u32(offset),nb]);
+   locals.push(local);centrals.push(central);offset+=local.length;
+ }
+ const centralData=concat(centrals),localData=concat(locals);
+ const eocd=concat([u32(0x06054b50),u16(0),u16(0),u16(centrals.length),u16(centrals.length),u32(centralData.length),u32(localData.length),u16(0)]);
+ return concat([localData,centralData,eocd]);
+}
+function xlsxCell(value,row,col,header=false){
+ const ref=colName(col)+row,style=header?' s="1"':'';
+ if(value!=null&&value!==''&&typeof value==='number'&&Number.isFinite(value)) return `<c r="${ref}"${style}><v>${value}</v></c>`;
+ const txt=xmlEsc(value==null?'':value).slice(0,32767);return `<c r="${ref}"${style} t="inlineStr"><is><t xml:space="preserve">${txt}</t></is></c>`;
+}
+function buildXlsx(rows){
+ const headers=['장르','제목','프로모션','순위',...DATA.times,'증감치','작가명','출판사','작품 ID','상태','작품 URL'];
+ const matrix=[headers,...rows.map(r=>[r.genre,r.title,r.promotion,r.rank,...r.values,r.delta,r.authors,r.publisher,r.id,r.status,r.url])];
+ const sheetRows=matrix.map((row,ri)=>`<row r="${ri+1}">${row.map((v,ci)=>xlsxCell(v,ri+1,ci+1,ri===0)).join('')}</row>`).join('');
+ const widths=[10,42,16,9,...DATA.times.map(()=>16),12,24,24,16,28,48];
+ const cols=widths.map((w,i)=>`<col min="${i+1}" max="${i+1}" width="${w}" customWidth="1"/>`).join('');
+ const files={
+ '[Content_Types].xml':'<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/></Types>',
+ '_rels/.rels':'<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>',
+ 'xl/workbook.xml':'<?xml version="1.0" encoding="UTF-8" standalone="yes"?><workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets><sheet name="쇼케이스 기록" sheetId="1" r:id="rId1"/></sheets></workbook>',
+ 'xl/_rels/workbook.xml.rels':'<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>',
+ 'xl/styles.xml':'<?xml version="1.0" encoding="UTF-8" standalone="yes"?><styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><fonts count="2"><font><sz val="11"/><name val="Calibri"/></font><font><b/><sz val="11"/><name val="Calibri"/></font></fonts><fills count="2"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill></fills><borders count="1"><border><left/><right/><top/><bottom/><diagonal/></border></borders><cellStyleXfs count="1"><xf numFmtId="0" fontId="0" fillId="0" borderId="0"/></cellStyleXfs><cellXfs count="2"><xf numFmtId="0" fontId="0" fillId="0" borderId="0" xfId="0"/><xf numFmtId="0" fontId="1" fillId="0" borderId="0" xfId="0" applyFont="1"/></cellXfs><cellStyles count="1"><cellStyle name="Normal" xfId="0" builtinId="0"/></cellStyles></styleSheet>',
+ 'xl/worksheets/sheet1.xml':`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><sheetViews><sheetView workbookViewId="0"><pane xSplit="4" ySplit="1" topLeftCell="E2" activePane="bottomRight" state="frozen"/></sheetView></sheetViews><cols>${cols}</cols><sheetData>${sheetRows}</sheetData><autoFilter ref="A1:${colName(headers.length)}${matrix.length}"/></worksheet>`
+ };
+ return zipStore(files);
+}
+document.getElementById('excel').addEventListener('click',()=>{
+ const bytes=buildXlsx(visibleRows),blob=new Blob([bytes],{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'}),a=document.createElement('a');
+ const d=new Date(),pad=n=>String(n).padStart(2,'0');
+ a.href=URL.createObjectURL(blob);a.download=`카카오쇼케이스_${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}_${pad(d.getHours())}${pad(d.getMinutes())}.xlsx`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1500);
+});
+
+header(); render();
+</script>
+</body></html>
