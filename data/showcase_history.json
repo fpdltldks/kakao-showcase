@@ -1,7 +1,8 @@
 {
   "url": "https://page.kakao.com/landing/series/list/page/landing/16140/",
   "times": [
-    "2026-09-11 21:07:10"
+    "2026-09-11 21:07:10",
+    "2026-09-16 10:08:56"
   ],
   "books": {
     "70288249": {
@@ -14,7 +15,8 @@
       "url": "https://page.kakao.com/content/70288249",
       "status": "수집됨",
       "values": [
-        75000
+        75000,
+        85000
       ]
     },
     "70183779": {
@@ -27,7 +29,8 @@
       "url": "https://page.kakao.com/content/70183779",
       "status": "수집됨",
       "values": [
-        68000
+        68000,
+        77000
       ]
     },
     "70229719": {
@@ -40,7 +43,8 @@
       "url": "https://page.kakao.com/content/70229719",
       "status": "수집됨",
       "values": [
-        68000
+        68000,
+        80000
       ]
     },
     "70077717": {
@@ -53,7 +57,8 @@
       "url": "https://page.kakao.com/content/70077717",
       "status": "수집됨",
       "values": [
-        46000
+        46000,
+        54000
       ]
     },
     "70325388": {
@@ -66,7 +71,8 @@
       "url": "https://page.kakao.com/content/70325388",
       "status": "수집됨",
       "values": [
-        45000
+        45000,
+        51000
       ]
     },
     "70074127": {
@@ -79,7 +85,8 @@
       "url": "https://page.kakao.com/content/70074127",
       "status": "수집됨",
       "values": [
-        40000
+        40000,
+        45000
       ]
     },
     "70265846": {
@@ -92,7 +99,8 @@
       "url": "https://page.kakao.com/content/70265846",
       "status": "수집됨",
       "values": [
-        38000
+        38000,
+        42000
       ]
     },
     "70286298": {
@@ -105,7 +113,8 @@
       "url": "https://page.kakao.com/content/70286298",
       "status": "수집됨",
       "values": [
-        36000
+        36000,
+        42000
       ]
     },
     "69284655": {
@@ -118,7 +127,8 @@
       "url": "https://page.kakao.com/content/69284655",
       "status": "수집됨",
       "values": [
-        35000
+        35000,
+        39000
       ]
     },
     "70206671": {
@@ -131,7 +141,8 @@
       "url": "https://page.kakao.com/content/70206671",
       "status": "수집됨",
       "values": [
-        34000
+        34000,
+        37000
       ]
     },
     "70285092": {
@@ -144,7 +155,8 @@
       "url": "https://page.kakao.com/content/70285092",
       "status": "수집됨",
       "values": [
-        32000
+        32000,
+        38000
       ]
     },
     "70285815": {
@@ -157,7 +169,8 @@
       "url": "https://page.kakao.com/content/70285815",
       "status": "수집됨",
       "values": [
-        26000
+        26000,
+        29000
       ]
     },
     "70318214": {
@@ -170,7 +183,8 @@
       "url": "https://page.kakao.com/content/70318214",
       "status": "수집됨",
       "values": [
-        22000
+        22000,
+        27000
       ]
     },
     "70263480": {
@@ -183,7 +197,8 @@
       "url": "https://page.kakao.com/content/70263480",
       "status": "수집됨",
       "values": [
-        22000
+        22000,
+        25000
       ]
     },
     "70167834": {
@@ -196,7 +211,8 @@
       "url": "https://page.kakao.com/content/70167834",
       "status": "수집됨",
       "values": [
-        21000
+        21000,
+        24000
       ]
     },
     "70312883": {
@@ -209,7 +225,8 @@
       "url": "https://page.kakao.com/content/70312883",
       "status": "수집됨",
       "values": [
-        21000
+        21000,
+        24000
       ]
     },
     "70183754": {
@@ -222,7 +239,8 @@
       "url": "https://page.kakao.com/content/70183754",
       "status": "수집됨",
       "values": [
-        20000
+        20000,
+        23000
       ]
     },
     "70316665": {
@@ -235,7 +253,8 @@
       "url": "https://page.kakao.com/content/70316665",
       "status": "수집됨",
       "values": [
-        20000
+        20000,
+        23000
       ]
     },
     "70249787": {
@@ -248,7 +267,8 @@
       "url": "https://page.kakao.com/content/70249787",
       "status": "수집됨",
       "values": [
-        16000
+        16000,
+        20000
       ]
     },
     "70346769": {
@@ -261,7 +281,8 @@
       "url": "https://page.kakao.com/content/70346769",
       "status": "수집됨",
       "values": [
-        15000
+        15000,
+        18000
       ]
     },
     "70357799": {
@@ -274,7 +295,8 @@
       "url": "https://page.kakao.com/content/70357799",
       "status": "수집됨",
       "values": [
-        13000
+        13000,
+        15000
       ]
     },
     "70286258": {
@@ -287,7 +309,8 @@
       "url": "https://page.kakao.com/content/70286258",
       "status": "수집됨",
       "values": [
-        12000
+        12000,
+        14000
       ]
     },
     "70363049": {
@@ -300,7 +323,8 @@
       "url": "https://page.kakao.com/content/70363049",
       "status": "수집됨",
       "values": [
-        12000
+        12000,
+        13000
       ]
     },
     "70169063": {
@@ -313,6 +337,7 @@
       "url": "https://page.kakao.com/content/70169063",
       "status": "수집됨",
       "values": [
+        10000,
         10000
       ]
     },
@@ -326,7 +351,8 @@
       "url": "https://page.kakao.com/content/70339763",
       "status": "수집됨",
       "values": [
-        8000
+        8000,
+        10000
       ]
     },
     "70210371": {
@@ -339,7 +365,8 @@
       "url": "https://page.kakao.com/content/70210371",
       "status": "수집됨",
       "values": [
-        7000
+        7000,
+        8000
       ]
     },
     "70253694": {
@@ -352,7 +379,8 @@
       "url": "https://page.kakao.com/content/70253694",
       "status": "수집됨",
       "values": [
-        6000
+        6000,
+        9000
       ]
     },
     "70332220": {
@@ -365,7 +393,8 @@
       "url": "https://page.kakao.com/content/70332220",
       "status": "수집됨",
       "values": [
-        6000
+        6000,
+        7000
       ]
     },
     "70206039": {
@@ -378,6 +407,7 @@
       "url": "https://page.kakao.com/content/70206039",
       "status": "수집됨",
       "values": [
+        6000,
         6000
       ]
     },
@@ -391,7 +421,8 @@
       "url": "https://page.kakao.com/content/70317162",
       "status": "수집됨",
       "values": [
-        5000
+        5000,
+        7000
       ]
     },
     "70167163": {
@@ -404,6 +435,7 @@
       "url": "https://page.kakao.com/content/70167163",
       "status": "수집됨",
       "values": [
+        4000,
         4000
       ]
     },
@@ -417,6 +449,7 @@
       "url": "https://page.kakao.com/content/70176082",
       "status": "수집됨",
       "values": [
+        4000,
         4000
       ]
     }
@@ -428,6 +461,14 @@
       32,
       "2026-09-11T21:07:44+09:00",
       "2026-09-11T21:07:55+09:00"
+    ],
+    [
+      "2026-09-16 10:08:56",
+      "온라인 수집",
+      32,
+      "2026-09-16T10:09:01+09:00",
+      "2026-09-16T10:09:03+09:00",
+      "https://page.kakao.com/landing/series/list/page/landing/16140/"
     ]
   ],
   "format": "KAKAO_SHOWCASE_HTML_HISTORY_V1",
