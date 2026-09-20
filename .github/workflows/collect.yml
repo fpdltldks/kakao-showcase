@@ -1,8 +1,8 @@
-name: 매일 오전 10시 데이터 수집
+name: 매일 오전 11시 30분 데이터 수집
 
 on:
   schedule:
-    - cron: '0 10 * * *'
+    - cron: '30 11 * * *'
       timezone: 'Asia/Seoul'
   workflow_dispatch:
     inputs:
