@@ -22,7 +22,22 @@ SIGNATURE = "KAKAO_SHOWCASE_HTML_HISTORY_V1"
 DATA_FILENAME = "showcase_history.json"
 HTML_FILENAME = "index.html"
 CONFIG_FILENAME = "config.json"
-COUNT_UNIT = "rounded_1000"
+COUNT_UNIT = "exact_under_10000_rounded_1000_over"
+
+# 이전 배포본에 함께 들어 있던 2026-09-11 최초 스냅샷의 원래 1만 이하 값.
+# 직전 rounded_1000 버전에서 업데이트하는 경우에만 해당 첫 기록을 복원합니다.
+LEGACY_FIRST_SNAPSHOT_TIME = "2026-09-11 21:07:10"
+LEGACY_FIRST_SNAPSHOT_EXACT = {
+    "70169063": 9550,
+    "70339763": 8098,
+    "70210371": 7293,
+    "70253694": 6378,
+    "70332220": 6320,
+    "70206039": 5632,
+    "70317162": 4915,
+    "70167163": 3907,
+    "70176082": 3822,
+}
 
 
 def normalize_url(url: str) -> str:
@@ -76,19 +91,31 @@ def _validate_state(state: dict, url: str | None = None) -> dict:
                 isinstance(value, bool)
                 or not isinstance(value, int)
                 or value < 0
-                or value % 1000 != 0
+                or (value > 10000 and value % 1000 != 0)
             ):
-                raise c.CollectionError(f"작품 {sid}의 조회수 값이 1,000회 단위가 아닙니다.")
+                raise c.CollectionError(
+                    f"작품 {sid}의 조회수 값이 공개 표기 기준(1만 이하 1회 단위 / 1만 초과 1,000회 단위)에 맞지 않습니다."
+                )
     return state
 
 
 def migrate_legacy_units(state: dict) -> bool:
-    """구버전(만 단위 소수) 기록을 1,000회 단위 정수로 한 번만 변환합니다."""
-    if state.get("unit") == COUNT_UNIT:
+    """기존 기록을 새 공개 표기 기준으로 변환합니다.
+
+    새 기준: 10,000회 이하는 1회 단위, 10,000회 초과는 1,000회 단위 반올림.
+    직전 rounded_1000 버전에서 이미 반올림된 과거 1만 이하 값은 원래의 1회 단위
+    숫자를 복원할 수 없으므로 그대로 유지합니다.
+    """
+    old_unit = state.get("unit")
+    if old_unit == COUNT_UNIT:
         return False
-    changed = False
+
     books = state.get("books")
-    if isinstance(books, dict):
+    changed = False
+
+    # 최초 버전은 '만' 단위 소수(예: 0.8098 == 8,098회)를 저장했습니다.
+    # 이 경우 원래 정수를 복원한 뒤 새 공개 표기 기준을 적용할 수 있습니다.
+    if old_unit in (None, "legacy_man_unit") and isinstance(books, dict):
         for book in books.values():
             vals = book.get("values") if isinstance(book, dict) else None
             if not isinstance(vals, list):
@@ -98,16 +125,32 @@ def migrate_legacy_units(state: dict) -> bool:
                 if value is None:
                     converted.append(None)
                 elif isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value) and value >= 0:
-                    # 구버전 값 1.0 == 10,000회. 가장 가까운 천 단위로 반올림.
-                    count = int(math.floor(float(value) * 10 + 0.5)) * 1000
-                    converted.append(count)
+                    exact = int(math.floor(float(value) * 10000 + 0.5))
+                    converted.append(c.public_count(exact))
                 else:
                     converted.append(value)
             if converted != vals:
                 book["values"] = converted
                 changed = True
+
+    # rounded_1000은 이미 정수로 변환된 기록입니다. 과거 1만 이하 원 정밀도는
+    # 손실되었으므로 값은 건드리지 않고 단위 표식만 새 기준으로 올립니다.
+    elif old_unit == "rounded_1000":
+        # 바로 이전 배포본의 최초 번들 데이터는 원본 정밀도를 별도로 보존하고 있어 복원 가능합니다.
+        times = state.get("times")
+        if isinstance(books, dict) and isinstance(times, list) and times and times[0] == LEGACY_FIRST_SNAPSHOT_TIME:
+            for sid, exact in LEGACY_FIRST_SNAPSHOT_EXACT.items():
+                book = books.get(sid)
+                vals = book.get("values") if isinstance(book, dict) else None
+                if isinstance(vals, list) and vals:
+                    vals[0] = exact
+        changed = True
+
+    elif old_unit not in (COUNT_UNIT,):
+        raise c.CollectionError("지원하지 않는 조회수 단위 기록입니다.")
+
     state["unit"] = COUNT_UNIT
-    return True
+    return True if changed or old_unit != COUNT_UNIT else False
 
 
 def load(path: Path, url: str) -> dict:
@@ -292,7 +335,7 @@ def render_html(path: Path, state: dict) -> None:
 </head>
 <body>
 <div class="wrap">
-  <div class="head"><div><h1>카카오 쇼케이스 조회수 기록</h1><div class="sub">날짜별 공개 조회수 누적 · 공개 표기 수준에 맞춰 1,000회 단위로 반올림</div></div><div class="sub" id="generated"></div></div>
+  <div class="head"><div><h1>카카오 쇼케이스 조회수 기록</h1><div class="sub">날짜별 공개 조회수 누적 · 1만 이하는 1회 단위, 1만 초과는 1,000회 단위 반올림</div></div><div class="sub" id="generated"></div></div>
   <div class="cards">
     <div class="card"><div class="label">최근 수집 시각</div><div class="big" id="lastTime">-</div></div>
     <div class="card"><div class="label">이번 목록 작품</div><div class="big" id="activeCount">0</div></div>
@@ -339,7 +382,7 @@ document.getElementById('captureCount').textContent=DATA.times.length.toLocaleSt
 document.getElementById('source').innerHTML=`현재 기록 대상: <a href="${esc(DATA.source)}" target="_blank" rel="noopener">${esc(DATA.source)}</a>`;
 sourceUrl.value=(DATA.config&&DATA.config.url)||DATA.source||'';
 const startDate=(DATA.config&&DATA.config.start_date)||'-', endDate=(DATA.config&&DATA.config.end_date)||'-';
-sourceState.textContent=`자동수집 기간: ${startDate} ~ ${endDate} · GitHub Actions가 한국 시간 매일 10:00에 실행됩니다.`;
+sourceState.textContent=`자동수집 기간: ${startDate} ~ ${endDate} · GitHub Actions가 한국 시간 매일 11:30에 실행됩니다.`;
 function githubRepoBase(){
  if(!location.hostname.endsWith('.github.io')) return null;
  const owner=location.hostname.split('.')[0];

@@ -120,20 +120,23 @@ def exact_count(value):
 
 
 def public_count(value):
-    """공개 페이지 표기 수준에 맞춰 가장 가까운 1,000회 단위로 반올림합니다.
+    """공개 페이지에서 확인 가능한 정밀도로 조회수를 정규화합니다.
 
-    예: 31,500 -> 32,000, 67,600 -> 68,000.
-    원 API의 더 세밀한 숫자는 반환/저장하지 않습니다.
+    - 10,000회 이하: 1회 단위 정수 그대로 보존
+    - 10,000회 초과: 가장 가까운 1,000회 단위로 반올림
+
+    예: 8,743 -> 8,743 / 10,000 -> 10,000 / 12,462 -> 12,000 /
+        12,586 -> 13,000 / '3.2만' -> 32,000.
     """
     count = exact_count(value)
     if count is not None:
-        return ((count + 500) // 1000) * 1000
+        return count if count <= 10000 else ((count + 500) // 1000) * 1000
     if isinstance(value, str):
         text = value.strip().replace(' ', '')
         m = re.fullmatch(r'(\d+(?:\.\d+)?)만', text)
         if m:
             count = int(float(m.group(1)) * 10000 + 0.5)
-            return ((count + 500) // 1000) * 1000
+            return count if count <= 10000 else ((count + 500) // 1000) * 1000
     return None
 
 
@@ -165,7 +168,7 @@ def make_row(index, item, about, collected_at):
     if raw is None: issues.append('조회수 미제공')
     elif count is None: issues.append('조회수 형식 확인 필요')
     return [index, item['title'], authors, publisher, count, public_label(count),
-            '공개 페이지 수준 1,000회 단위 반올림 (당일 발생량 아님)', collected_at, sid,
+            '공개 페이지 기준: 1만 이하 1회 단위 / 1만 초과 1,000회 단위 반올림 (당일 발생량 아님)', collected_at, sid,
             PAGE + '/content/' + sid, '; '.join(issues) or '수집됨', item.get('sub_category') or item.get('category') or '']
 
 def collect(url, delay, max_pages, log):

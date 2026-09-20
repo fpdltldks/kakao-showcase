@@ -50,7 +50,7 @@ def render_existing(cfg: dict) -> None:
     state["url"] = cfg["url"]
     if migrated:
         DATA.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
-        print("구버전 조회수 기록을 1,000회 단위로 변환했습니다.")
+        print("구버전 조회수 기록을 새 공개 표기 기준으로 변환했습니다.")
     dashboard_history.render_html(HTML, state)
 
 
