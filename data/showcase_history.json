@@ -1,5 +1,5 @@
 {
-  "url": "https://page.kakao.com/landing/series/list/page/landing/16140/",
+  "url": "https://page.kakao.com/landing/series/list/page/landing/16141/",
   "times": [
     "2026-09-11 21:07:10",
     "2026-09-16 10:08:56",
@@ -9,7 +9,8 @@
     "2026-09-20 10:08:45",
     "2026-09-21 00:44:20",
     "2026-09-22 11:41:09",
-    "2026-09-23 11:41:05"
+    "2026-09-23 11:41:05",
+    "2026-09-24 11:41:45"
   ],
   "books": {
     "70288249": {
@@ -20,7 +21,7 @@
       "authors": "역주체",
       "publisher": "판시아",
       "url": "https://page.kakao.com/content/70288249",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         75000,
         85000,
@@ -30,7 +31,8 @@
         91000,
         92000,
         95000,
-        97000
+        97000,
+        null
       ]
     },
     "70183779": {
@@ -41,7 +43,7 @@
       "authors": "기사혼",
       "publisher": "에이시스미디어",
       "url": "https://page.kakao.com/content/70183779",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         68000,
         77000,
@@ -51,7 +53,8 @@
         83000,
         84000,
         86000,
-        88000
+        88000,
+        null
       ]
     },
     "70229719": {
@@ -62,7 +65,7 @@
       "authors": "하얀곶감",
       "publisher": "펜타그램",
       "url": "https://page.kakao.com/content/70229719",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         68000,
         80000,
@@ -72,7 +75,8 @@
         87000,
         89000,
         92000,
-        94000
+        94000,
+        null
       ]
     },
     "70077717": {
@@ -83,7 +87,7 @@
       "authors": "오토마톤G",
       "publisher": "HAKSANNOVEL",
       "url": "https://page.kakao.com/content/70077717",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         46000,
         54000,
@@ -93,7 +97,8 @@
         58000,
         60000,
         62000,
-        63000
+        63000,
+        null
       ]
     },
     "70325388": {
@@ -104,7 +109,7 @@
       "authors": "리슝",
       "publisher": "고렘팩토리",
       "url": "https://page.kakao.com/content/70325388",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         45000,
         51000,
@@ -114,7 +119,8 @@
         56000,
         56000,
         58000,
-        59000
+        59000,
+        null
       ]
     },
     "70074127": {
@@ -125,7 +131,7 @@
       "authors": "은남",
       "publisher": "고렘팩토리",
       "url": "https://page.kakao.com/content/70074127",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         40000,
         45000,
@@ -135,7 +141,8 @@
         50000,
         52000,
         53000,
-        55000
+        55000,
+        null
       ]
     },
     "70265846": {
@@ -146,7 +153,7 @@
       "authors": "달거북이",
       "publisher": "디앤씨미디어",
       "url": "https://page.kakao.com/content/70265846",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         38000,
         42000,
@@ -156,7 +163,8 @@
         45000,
         46000,
         47000,
-        48000
+        48000,
+        null
       ]
     },
     "70286298": {
@@ -167,7 +175,7 @@
       "authors": "조성완",
       "publisher": "디앤씨미디어",
       "url": "https://page.kakao.com/content/70286298",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         36000,
         42000,
@@ -177,7 +185,8 @@
         47000,
         48000,
         49000,
-        51000
+        51000,
+        null
       ]
     },
     "69284655": {
@@ -188,7 +197,7 @@
       "authors": "무티",
       "publisher": "고렘팩토리",
       "url": "https://page.kakao.com/content/69284655",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         35000,
         39000,
@@ -198,7 +207,8 @@
         42000,
         43000,
         44000,
-        45000
+        45000,
+        null
       ]
     },
     "70206671": {
@@ -209,7 +219,7 @@
       "authors": "냉면화채",
       "publisher": "삼양씨앤씨",
       "url": "https://page.kakao.com/content/70206671",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         34000,
         37000,
@@ -219,7 +229,8 @@
         39000,
         40000,
         41000,
-        42000
+        42000,
+        null
       ]
     },
     "70285092": {
@@ -230,7 +241,7 @@
       "authors": "상현",
       "publisher": "디앤씨미디어",
       "url": "https://page.kakao.com/content/70285092",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         32000,
         38000,
@@ -240,7 +251,8 @@
         45000,
         46000,
         48000,
-        49000
+        49000,
+        null
       ]
     },
     "70285815": {
@@ -251,7 +263,7 @@
       "authors": "곽승록",
       "publisher": "고렘팩토리",
       "url": "https://page.kakao.com/content/70285815",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         26000,
         29000,
@@ -261,7 +273,8 @@
         33000,
         34000,
         35000,
-        35000
+        35000,
+        null
       ]
     },
     "70318214": {
@@ -272,7 +285,7 @@
       "authors": "감상적 추계, 적월",
       "publisher": "코코스토리즈",
       "url": "https://page.kakao.com/content/70318214",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         22000,
         27000,
@@ -282,7 +295,8 @@
         31000,
         32000,
         33000,
-        34000
+        34000,
+        null
       ]
     },
     "70263480": {
@@ -293,7 +307,7 @@
       "authors": "클쓰마쓰",
       "publisher": "삼양씨앤씨",
       "url": "https://page.kakao.com/content/70263480",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         22000,
         25000,
@@ -303,7 +317,8 @@
         26000,
         27000,
         28000,
-        29000
+        29000,
+        null
       ]
     },
     "70167834": {
@@ -314,7 +329,7 @@
       "authors": "방울뱀",
       "publisher": "스토리튠즈",
       "url": "https://page.kakao.com/content/70167834",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         21000,
         24000,
@@ -324,7 +339,8 @@
         26000,
         27000,
         28000,
-        29000
+        29000,
+        null
       ]
     },
     "70312883": {
@@ -335,7 +351,7 @@
       "authors": "노델",
       "publisher": "삼양씨앤씨",
       "url": "https://page.kakao.com/content/70312883",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         21000,
         24000,
@@ -345,7 +361,8 @@
         26000,
         26000,
         27000,
-        27000
+        27000,
+        null
       ]
     },
     "70183754": {
@@ -356,7 +373,7 @@
       "authors": "왜그래놀라",
       "publisher": "에이시스미디어",
       "url": "https://page.kakao.com/content/70183754",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         20000,
         23000,
@@ -366,7 +383,8 @@
         26000,
         27000,
         28000,
-        29000
+        29000,
+        null
       ]
     },
     "70316665": {
@@ -377,7 +395,7 @@
       "authors": "작야검신, 묵경",
       "publisher": "코코스토리즈",
       "url": "https://page.kakao.com/content/70316665",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         20000,
         23000,
@@ -387,7 +405,8 @@
         25000,
         26000,
         27000,
-        27000
+        27000,
+        null
       ]
     },
     "70249787": {
@@ -398,7 +417,7 @@
       "authors": "김석진",
       "publisher": "인타임",
       "url": "https://page.kakao.com/content/70249787",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         16000,
         20000,
@@ -408,7 +427,8 @@
         23000,
         24000,
         26000,
-        27000
+        27000,
+        null
       ]
     },
     "70346769": {
@@ -419,7 +439,7 @@
       "authors": "박격포",
       "publisher": "스토리튠즈",
       "url": "https://page.kakao.com/content/70346769",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         15000,
         18000,
@@ -429,7 +449,8 @@
         20000,
         21000,
         22000,
-        22000
+        22000,
+        null
       ]
     },
     "70357799": {
@@ -440,7 +461,7 @@
       "authors": "서준백",
       "publisher": "로크미디어",
       "url": "https://page.kakao.com/content/70357799",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         13000,
         15000,
@@ -450,7 +471,8 @@
         18000,
         19000,
         19000,
-        20000
+        20000,
+        null
       ]
     },
     "70286258": {
@@ -461,7 +483,7 @@
       "authors": "구사",
       "publisher": "디앤씨미디어",
       "url": "https://page.kakao.com/content/70286258",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         12000,
         14000,
@@ -471,7 +493,8 @@
         17000,
         17000,
         17000,
-        18000
+        18000,
+        null
       ]
     },
     "70363049": {
@@ -482,7 +505,7 @@
       "authors": "선선",
       "publisher": "판시아",
       "url": "https://page.kakao.com/content/70363049",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         12000,
         13000,
@@ -492,7 +515,8 @@
         14000,
         15000,
         15000,
-        15000
+        15000,
+        null
       ]
     },
     "70169063": {
@@ -503,7 +527,7 @@
       "authors": "순살패링",
       "publisher": "다온노블",
       "url": "https://page.kakao.com/content/70169063",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         9550,
         10000,
@@ -513,7 +537,8 @@
         10000,
         10000,
         10000,
-        10000
+        10000,
+        null
       ]
     },
     "70339763": {
@@ -524,7 +549,7 @@
       "authors": "모다한",
       "publisher": "HAKSANNOVEL",
       "url": "https://page.kakao.com/content/70339763",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         8098,
         10000,
@@ -534,7 +559,8 @@
         11000,
         12000,
         13000,
-        13000
+        13000,
+        null
       ]
     },
     "70210371": {
@@ -545,7 +571,7 @@
       "authors": "글마",
       "publisher": "스토리작",
       "url": "https://page.kakao.com/content/70210371",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         7293,
         8000,
@@ -555,7 +581,8 @@
         9000,
         8899,
         9152,
-        9368
+        9368,
+        null
       ]
     },
     "70253694": {
@@ -566,7 +593,7 @@
       "authors": "한단오",
       "publisher": "인타임",
       "url": "https://page.kakao.com/content/70253694",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         6378,
         9000,
@@ -576,7 +603,8 @@
         10000,
         11000,
         12000,
-        12000
+        12000,
+        null
       ]
     },
     "70332220": {
@@ -587,7 +615,7 @@
       "authors": "햄닛",
       "publisher": "피플앤스토리",
       "url": "https://page.kakao.com/content/70332220",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         6320,
         7000,
@@ -597,7 +625,8 @@
         8000,
         8470,
         8790,
-        9015
+        9015,
+        null
       ]
     },
     "70206039": {
@@ -608,7 +637,7 @@
       "authors": "으헹헹헹헤",
       "publisher": "올데이즈",
       "url": "https://page.kakao.com/content/70206039",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         5632,
         6000,
@@ -618,7 +647,8 @@
         7000,
         6832,
         6965,
-        7225
+        7225,
+        null
       ]
     },
     "70317162": {
@@ -629,7 +659,7 @@
       "authors": "단순댁남, 아포가토",
       "publisher": "코코스토리즈",
       "url": "https://page.kakao.com/content/70317162",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         4915,
         7000,
@@ -639,7 +669,8 @@
         9000,
         8933,
         9200,
-        9602
+        9602,
+        null
       ]
     },
     "70167163": {
@@ -650,7 +681,7 @@
       "authors": "송이젤리",
       "publisher": "현나라",
       "url": "https://page.kakao.com/content/70167163",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         3907,
         4000,
@@ -660,7 +691,8 @@
         5000,
         4618,
         4667,
-        4725
+        4725,
+        null
       ]
     },
     "70176082": {
@@ -671,7 +703,7 @@
       "authors": "메펜강",
       "publisher": "스토리야",
       "url": "https://page.kakao.com/content/70176082",
-      "status": "수집됨",
+      "status": "이번 목록에 없음",
       "values": [
         3822,
         4000,
@@ -681,8 +713,757 @@
         5000,
         5261,
         5398,
-        5531
+        5531,
+        null
       ]
+    },
+    "70734034": {
+      "id": "70734034",
+      "genre": "무협",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        544
+      ],
+      "title": "반로환동을 너무 잘함",
+      "authors": "작가는자유에요",
+      "publisher": "고렘팩토리",
+      "url": "https://page.kakao.com/content/70734034",
+      "status": "수집됨"
+    },
+    "70743735": {
+      "id": "70743735",
+      "genre": "무협",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        3393
+      ],
+      "title": "불사마제",
+      "authors": "바루바",
+      "publisher": "고렘팩토리",
+      "url": "https://page.kakao.com/content/70743735",
+      "status": "수집됨"
+    },
+    "70764144": {
+      "id": "70764144",
+      "genre": "판타지",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        2711
+      ],
+      "title": "갓물주 능력의 헌터가 되었다",
+      "authors": "천종원",
+      "publisher": "고렘팩토리",
+      "url": "https://page.kakao.com/content/70764144",
+      "status": "수집됨"
+    },
+    "70580150": {
+      "id": "70580150",
+      "genre": "판타지",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        3884
+      ],
+      "title": "회귀한 무신은 즉사기로 탑을 공략한다",
+      "authors": "꼬마돌",
+      "publisher": "고렘팩토리",
+      "url": "https://page.kakao.com/content/70580150",
+      "status": "수집됨"
+    },
+    "70240603": {
+      "id": "70240603",
+      "genre": "현판",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        3249
+      ],
+      "title": "전직 성녀가 산부인과를 열었다",
+      "authors": "미레나",
+      "publisher": "고렘팩토리",
+      "url": "https://page.kakao.com/content/70240603",
+      "status": "수집됨"
+    },
+    "69637657": {
+      "id": "69637657",
+      "genre": "현판",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        5397
+      ],
+      "title": "회귀한 천재 스위치 투수가 마운드를 씹어먹음",
+      "authors": "링컨ABC",
+      "publisher": "고렘팩토리",
+      "url": "https://page.kakao.com/content/69637657",
+      "status": "수집됨"
+    },
+    "70716953": {
+      "id": "70716953",
+      "genre": "판타지",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        8254
+      ],
+      "title": "초월자들의 호감 뉴비가 되었다",
+      "authors": "갈색팬더",
+      "publisher": "디앤씨미디어",
+      "url": "https://page.kakao.com/content/70716953",
+      "status": "수집됨"
+    },
+    "70713654": {
+      "id": "70713654",
+      "genre": "판타지",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1507
+      ],
+      "title": "맹약으로 초월하는 검술 천재",
+      "authors": "먼달",
+      "publisher": "디앤씨미디어",
+      "url": "https://page.kakao.com/content/70713654",
+      "status": "수집됨"
+    },
+    "70719253": {
+      "id": "70719253",
+      "genre": "판타지",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1285
+      ],
+      "title": "다시 태어난 소드마스터",
+      "authors": "새마소",
+      "publisher": "디앤씨미디어",
+      "url": "https://page.kakao.com/content/70719253",
+      "status": "수집됨"
+    },
+    "70692753": {
+      "id": "70692753",
+      "genre": "무협",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        708
+      ],
+      "title": "마교의 대화수단이 훌륭함",
+      "authors": "조비본",
+      "publisher": "라온이앤엠",
+      "url": "https://page.kakao.com/content/70692753",
+      "status": "수집됨"
+    },
+    "69696544": {
+      "id": "69696544",
+      "genre": "무협",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1841
+      ],
+      "title": "과속으로 천마신교 데릴사위",
+      "authors": "춘둥",
+      "publisher": "흑담",
+      "url": "https://page.kakao.com/content/69696544",
+      "status": "수집됨"
+    },
+    "70728856": {
+      "id": "70728856",
+      "genre": "무협",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1825
+      ],
+      "title": "천하제일인인데 나만 모름",
+      "authors": "밀렵",
+      "publisher": "뷰컴즈",
+      "url": "https://page.kakao.com/content/70728856",
+      "status": "수집됨"
+    },
+    "70732901": {
+      "id": "70732901",
+      "genre": "무협",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1360
+      ],
+      "title": "쟁자수가 천마 갤러리를 얻었다",
+      "authors": "도후",
+      "publisher": "뿔미디어",
+      "url": "https://page.kakao.com/content/70732901",
+      "status": "수집됨"
+    },
+    "70717294": {
+      "id": "70717294",
+      "genre": "판타지",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        3554
+      ],
+      "title": "탑에 살림차렸더니, 돈이 너무 쉬움",
+      "authors": "손프로",
+      "publisher": "삼양씨앤씨",
+      "url": "https://page.kakao.com/content/70717294",
+      "status": "수집됨"
+    },
+    "70755271": {
+      "id": "70755271",
+      "genre": "판타지",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        4898
+      ],
+      "title": "에겐남이 탑을 안 오름",
+      "authors": "글먹는빌런",
+      "publisher": "삼양씨앤씨",
+      "url": "https://page.kakao.com/content/70755271",
+      "status": "수집됨"
+    },
+    "70788007": {
+      "id": "70788007",
+      "genre": "판타지",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        2258
+      ],
+      "title": "바바리안이 농사를 잘함",
+      "authors": "성원송",
+      "publisher": "KT스튜디오지니2",
+      "url": "https://page.kakao.com/content/70788007",
+      "status": "수집됨"
+    },
+    "70287633": {
+      "id": "70287633",
+      "genre": "현판",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        2188
+      ],
+      "title": "미래를 읽는 상권분석가",
+      "authors": "멘탈라인",
+      "publisher": "스토리작",
+      "url": "https://page.kakao.com/content/70287633",
+      "status": "수집됨"
+    },
+    "70743164": {
+      "id": "70743164",
+      "genre": "무협",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1253
+      ],
+      "title": "모용세가 막내아들",
+      "authors": "이사나",
+      "publisher": "에이시스미디어",
+      "url": "https://page.kakao.com/content/70743164",
+      "status": "수집됨"
+    },
+    "70743881": {
+      "id": "70743881",
+      "genre": "현판",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        6003
+      ],
+      "title": "천재 배우가 쌍둥이를 숨김",
+      "authors": "달로간수달",
+      "publisher": "에이시스미디어",
+      "url": "https://page.kakao.com/content/70743881",
+      "status": "수집됨"
+    },
+    "70740789": {
+      "id": "70740789",
+      "genre": "현판",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        4208
+      ],
+      "title": "재앙급 퇴마사가 미국에서 너무 강함",
+      "authors": "기시감이",
+      "publisher": "에이시스미디어",
+      "url": "https://page.kakao.com/content/70740789",
+      "status": "수집됨"
+    },
+    "70338621": {
+      "id": "70338621",
+      "genre": "판타지",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1749
+      ],
+      "title": "탑 등반이 싫어서 게이트를 열었다",
+      "authors": "쥬시",
+      "publisher": "에필로그",
+      "url": "https://page.kakao.com/content/70338621",
+      "status": "수집됨"
+    },
+    "70711321": {
+      "id": "70711321",
+      "genre": "판타지",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        5124
+      ],
+      "title": "70억을 죽인 재앙급 공무원",
+      "authors": "규명",
+      "publisher": "(주) 오픈스토리",
+      "url": "https://page.kakao.com/content/70711321",
+      "status": "수집됨"
+    },
+    "70710852": {
+      "id": "70710852",
+      "genre": "판타지",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        2063
+      ],
+      "title": "그림자 세계의 미친 칼잡이",
+      "authors": "신율",
+      "publisher": "인타임",
+      "url": "https://page.kakao.com/content/70710852",
+      "status": "수집됨"
+    },
+    "70710981": {
+      "id": "70710981",
+      "genre": "판타지",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        755
+      ],
+      "title": "마법 세계 영웅으로 살아가는 법",
+      "authors": "아보에잇",
+      "publisher": "인타임",
+      "url": "https://page.kakao.com/content/70710981",
+      "status": "수집됨"
+    },
+    "70732697": {
+      "id": "70732697",
+      "genre": "판타지",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1667
+      ],
+      "title": "전능의 점자 마도서를 얻었다",
+      "authors": "박경원",
+      "publisher": "작가컴퍼니",
+      "url": "https://page.kakao.com/content/70732697",
+      "status": "수집됨"
+    },
+    "70763834": {
+      "id": "70763834",
+      "genre": "현판",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        2849
+      ],
+      "title": "회귀자의 괴담 탑 공략법",
+      "authors": "하루비타민",
+      "publisher": "제이트리미디어",
+      "url": "https://page.kakao.com/content/70763834",
+      "status": "수집됨"
+    },
+    "70759726": {
+      "id": "70759726",
+      "genre": "현판",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1351
+      ],
+      "title": "이세계 멤버들로 아이돌 데뷔합니다",
+      "authors": "보고가",
+      "publisher": "징크스튜디오",
+      "url": "https://page.kakao.com/content/70759726",
+      "status": "수집됨"
+    },
+    "70777027": {
+      "id": "70777027",
+      "genre": "판타지",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        2028
+      ],
+      "title": "물려받은 양식장에 SSR 영물이 굴러옴",
+      "authors": "김호정",
+      "publisher": "텐북",
+      "url": "https://page.kakao.com/content/70777027",
+      "status": "수집됨"
+    },
+    "70735891": {
+      "id": "70735891",
+      "genre": "판타지",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        4556
+      ],
+      "title": "네크로맨서는 은퇴하고 농부합니다",
+      "authors": "차공진",
+      "publisher": "판시아",
+      "url": "https://page.kakao.com/content/70735891",
+      "status": "수집됨"
+    },
+    "70603972": {
+      "id": "70603972",
+      "genre": "판타지",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        2817
+      ],
+      "title": "마탑의 선협천재",
+      "authors": "소오",
+      "publisher": "판시아",
+      "url": "https://page.kakao.com/content/70603972",
+      "status": "수집됨"
+    },
+    "70629799": {
+      "id": "70629799",
+      "genre": "무협",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        674
+      ],
+      "title": "무림 회계사",
+      "authors": "카페아저씨",
+      "publisher": "kwbooks",
+      "url": "https://page.kakao.com/content/70629799",
+      "status": "수집됨"
+    },
+    "70628080": {
+      "id": "70628080",
+      "genre": "무협",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        692
+      ],
+      "title": "무림 흑막 혈마가 혈공을 숨김",
+      "authors": "912",
+      "publisher": "kwbooks",
+      "url": "https://page.kakao.com/content/70628080",
+      "status": "수집됨"
+    },
+    "70630580": {
+      "id": "70630580",
+      "genre": "현판",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1808
+      ],
+      "title": "회귀한 작가는 천재 감독이 되었다",
+      "authors": "필건",
+      "publisher": "kwbooks",
+      "url": "https://page.kakao.com/content/70630580",
+      "status": "수집됨"
+    },
+    "70625440": {
+      "id": "70625440",
+      "genre": "현판",
+      "promotion": "",
+      "values": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        2360
+      ],
+      "title": "미래를 보는 회사원",
+      "authors": "봉공(鳳公)",
+      "publisher": "펜타그램",
+      "url": "https://page.kakao.com/content/70625440",
+      "status": "수집됨"
     }
   },
   "captures": [
@@ -756,6 +1537,14 @@
       "2026-09-23T11:41:10+09:00",
       "2026-09-23T11:41:12+09:00",
       "https://page.kakao.com/landing/series/list/page/landing/16140/"
+    ],
+    [
+      "2026-09-24 11:41:45",
+      "온라인 수집",
+      34,
+      "2026-09-24T11:41:50+09:00",
+      "2026-09-24T11:41:52+09:00",
+      "https://page.kakao.com/landing/series/list/page/landing/16141/"
     ]
   ],
   "format": "KAKAO_SHOWCASE_HTML_HISTORY_V1",
