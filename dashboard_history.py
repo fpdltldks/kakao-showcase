@@ -350,6 +350,7 @@ def render_html(path: Path, state: dict) -> None:
     <span id="sourceState" class="sourcehint"></span>
   </div>
   <div class="controls">
+    <select id="series" title="쇼케이스 회차"></select>
     <input id="q" type="search" placeholder="제목 · 작가 · 출판사 검색">
     <select id="genre"><option value="">전체 장르</option></select>
     <select id="presence"><option value="all">전체 작품</option><option value="active">이번 목록에 있음</option><option value="missing">이번 목록에 없음</option></select>
@@ -364,25 +365,78 @@ def render_html(path: Path, state: dict) -> None:
 <script>
 const DATA=JSON.parse(document.getElementById('payload').textContent);
 const GENERATED='__GENERATED__';
-const q=document.getElementById('q'), genre=document.getElementById('genre'), presence=document.getElementById('presence');
+const q=document.getElementById('q'), genre=document.getElementById('genre'), presence=document.getElementById('presence'), seriesSel=document.getElementById('series');
 const sourceUrl=document.getElementById('sourceUrl'), sourceState=document.getElementById('sourceState');
 let visibleRows=[];
-let sortState={key:DATA.times.length?`time:${DATA.times.length-1}`:'rank',dir:'desc'};
+
 const fmt=v=>v==null?'':Math.round(Number(v)).toLocaleString('ko-KR');
 const shortTime=t=>t?`${t.slice(5,10)} ${t.slice(11,16)}`:'';
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
-const latest=r=>r.values.length?r.values[r.values.length-1]:null;
+
+const captureUrls=DATA.times.map((_,i)=>{
+ const c=Array.isArray(DATA.captures)&&Array.isArray(DATA.captures[i])?DATA.captures[i]:null;
+ return c&&c[5]?String(c[5]):'';
+});
+// 구버전 첫 캡처처럼 URL이 비어 있으면 가장 가까운 이후 회차 URL을 우선 사용합니다.
+let nextUrl='';
+for(let i=captureUrls.length-1;i>=0;i--){if(captureUrls[i])nextUrl=captureUrls[i];else if(nextUrl)captureUrls[i]=nextUrl;}
+let prevUrl='';
+for(let i=0;i<captureUrls.length;i++){if(captureUrls[i])prevUrl=captureUrls[i];else if(prevUrl)captureUrls[i]=prevUrl;}
+const seriesUrls=[...new Set(captureUrls.filter(Boolean))];
+const configuredUrl=(DATA.config&&DATA.config.url)||DATA.source||'';
+if(configuredUrl&&!seriesUrls.includes(configuredUrl))seriesUrls.push(configuredUrl);
+
+function seriesLabel(url){
+ const m=String(url||'').match(/landing\/(\d+)\/?$/);
+ if(!m)return '기타 회차';
+ const id=Number(m[1]);
+ if(Number.isFinite(id)&&id>=16140){
+   const d=new Date(2026,9,1);
+   d.setMonth(d.getMonth()+(id-16140));
+   return `${d.getFullYear()}년 ${d.getMonth()+1}월`;
+ }
+ return `회차 ${m[1]}`;
+}
+[...seriesUrls].reverse().forEach(url=>{
+ const o=document.createElement('option');o.value=url;o.textContent=seriesLabel(url);o.title=url;seriesSel.appendChild(o);
+});
+if(configuredUrl&&seriesUrls.includes(configuredUrl))seriesSel.value=configuredUrl;
+else if(seriesUrls.length)seriesSel.value=seriesUrls[seriesUrls.length-1];
+
+function selectedIndices(){
+ const url=seriesSel.value;
+ return captureUrls.map((u,i)=>u===url?i:-1).filter(i=>i>=0);
+}
+function latestIndex(){const a=selectedIndices();return a.length?a[a.length-1]:-1;}
+function latest(r){const i=latestIndex();return i>=0?r.values[i]??null:null;}
+function previous(r){const a=selectedIndices();return a.length>1?r.values[a[a.length-2]]??null:null;}
+function deltaValue(r){const a=latest(r),b=previous(r);return a!=null&&b!=null?a-b:null;}
+function rowInSeries(r){return selectedIndices().some(i=>r.values[i]!=null);}
+function currentRows(){return DATA.rows.filter(rowInSeries);}
+function rankValue(r){
+ const v=latest(r); if(v==null)return null;
+ const vals=currentRows().map(latest).filter(x=>x!=null);
+ return 1+vals.filter(x=>x>v).length;
+}
+function dynamicStatus(r){return latest(r)!=null?'수집됨':'이번 목록에 없음';}
+
+let sortState={key:latestIndex()>=0?`time:${latestIndex()}`:'rank',dir:'desc'};
 const genres=[...new Set(DATA.rows.map(r=>r.genre).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'ko'));
 for(const g of genres){const o=document.createElement('option');o.value=g;o.textContent=g;genre.appendChild(o)}
 document.getElementById('generated').textContent=`HTML 생성: ${GENERATED} KST`;
-document.getElementById('lastTime').textContent=DATA.times.length?DATA.times[DATA.times.length-1].slice(5):'-';
-document.getElementById('activeCount').textContent=DATA.rows.filter(r=>latest(r)!=null).length.toLocaleString('ko-KR');
-document.getElementById('totalCount').textContent=DATA.rows.length.toLocaleString('ko-KR');
-document.getElementById('captureCount').textContent=DATA.times.length.toLocaleString('ko-KR');
-document.getElementById('source').innerHTML=`현재 기록 대상: <a href="${esc(DATA.source)}" target="_blank" rel="noopener">${esc(DATA.source)}</a>`;
-sourceUrl.value=(DATA.config&&DATA.config.url)||DATA.source||'';
+sourceUrl.value=configuredUrl||DATA.source||'';
 const startDate=(DATA.config&&DATA.config.start_date)||'-', endDate=(DATA.config&&DATA.config.end_date)||'-';
 sourceState.textContent=`자동수집 기간: ${startDate} ~ ${endDate} · GitHub Actions가 한국 시간 매일 11:30에 실행됩니다.`;
+
+function updateSummary(){
+ const idxs=selectedIndices(), rows=currentRows(), last=idxs.length?idxs[idxs.length-1]:-1;
+ document.getElementById('lastTime').textContent=last>=0?DATA.times[last].slice(5):'-';
+ document.getElementById('activeCount').textContent=rows.filter(r=>latest(r)!=null).length.toLocaleString('ko-KR');
+ document.getElementById('totalCount').textContent=rows.length.toLocaleString('ko-KR');
+ document.getElementById('captureCount').textContent=idxs.length.toLocaleString('ko-KR');
+ const url=seriesSel.value||DATA.source||'';
+ document.getElementById('source').innerHTML=`선택 회차: <b>${esc(seriesLabel(url))}</b> · <a href="${esc(url)}" target="_blank" rel="noopener">${esc(url)}</a>`;
+}
 function githubRepoBase(){
  if(!location.hostname.endsWith('.github.io')) return null;
  const owner=location.hostname.split('.')[0];
@@ -401,8 +455,8 @@ document.getElementById('runNow').addEventListener('click',()=>openWorkflow('col
 function sortValue(r,key){
  if(key.startsWith('time:')) return r.values[Number(key.split(':')[1])] ?? null;
  if(key==='genre')return r.genre||''; if(key==='title')return r.title||''; if(key==='promotion')return r.promotion||'';
- if(key==='rank')return r.rank; if(key==='delta')return r.delta; if(key==='authors')return r.authors||'';
- if(key==='publisher')return r.publisher||''; if(key==='id')return Number(r.id); if(key==='status')return r.status||'';
+ if(key==='rank')return rankValue(r); if(key==='delta')return deltaValue(r); if(key==='authors')return r.authors||'';
+ if(key==='publisher')return r.publisher||''; if(key==='id')return Number(r.id); if(key==='status')return dynamicStatus(r);
  return null;
 }
 function compareRows(a,b){
@@ -420,8 +474,9 @@ function th(label,key,cls=''){
  return `<th class="sortable ${cls}" data-sort="${esc(key)}">${esc(label)}<span class="sortmark">${mark}</span></th>`;
 }
 function header(){
+ const idxs=selectedIndices();
  let cells=th('장르','genre','sticky c1')+th('제목','title','sticky c2')+th('프로모션','promotion','sticky c3')+th('순위','rank','sticky c4');
- cells+=DATA.times.map((t,i)=>th(shortTime(t),`time:${i}`)).join('');
+ cells+=idxs.map(i=>th(shortTime(DATA.times[i]),`time:${i}`)).join('');
  cells+=th('증감치','delta')+th('작가명','authors')+th('출판사','publisher')+th('작품 ID','id')+th('상태','status');
  document.getElementById('thead').innerHTML='<tr>'+cells+'</tr>';
  document.querySelectorAll('th[data-sort]').forEach(el=>el.addEventListener('click',()=>{
@@ -433,29 +488,35 @@ function header(){
 }
 function filteredSortedRows(){
  const needle=q.value.trim().toLocaleLowerCase('ko-KR'), g=genre.value, p=presence.value;
- return DATA.rows.filter(r=>{
+ return currentRows().filter(r=>{
    const active=latest(r)!=null;
    const text=`${r.title} ${r.authors} ${r.publisher} ${r.id}`.toLocaleLowerCase('ko-KR');
    return (!needle||text.includes(needle))&&(!g||r.genre===g)&&(p==='all'||(p==='active'&&active)||(p==='missing'&&!active));
  }).sort(compareRows);
 }
 function render(){
- const rows=filteredSortedRows(); visibleRows=rows;
+ const idxs=selectedIndices(), rows=filteredSortedRows(); visibleRows=rows;
  const htmlRows=rows.map(r=>{
-   const active=latest(r)!=null; const delta=r.delta;
-   const vals=r.values.map(v=>`<td class="${v==null?'muted':''}">${v==null?'—':fmt(v)}</td>`).join('');
+   const active=latest(r)!=null, delta=deltaValue(r);
+   const vals=idxs.map(i=>{const v=r.values[i];return `<td class="${v==null?'muted':''}">${v==null?'—':fmt(v)}</td>`}).join('');
    const dc=delta==null?'':(delta>0?'pos':delta<0?'neg':'');
    const ds=delta==null?'—':`${delta>0?'+':''}${fmt(delta)}`;
-   const stat=(r.status||(!active?'이번 목록에 없음':''));
-   return `<tr><td class="sticky c1">${esc(r.genre)}</td><td class="sticky c2 title"><a href="${esc(r.url)}" target="_blank" rel="noopener" title="${esc(r.title)}">${esc(r.title)}</a></td><td class="sticky c3">${esc(r.promotion)}</td><td class="sticky c4">${r.rank??'—'}</td>${vals}<td class="${dc}">${ds}</td><td>${esc(r.authors)}</td><td>${esc(r.publisher)}</td><td>${esc(r.id)}</td><td class="${!active?'status-missing':''}">${esc(stat)}</td></tr>`;
+   const stat=dynamicStatus(r);
+   return `<tr><td class="sticky c1">${esc(r.genre)}</td><td class="sticky c2 title"><a href="${esc(r.url)}" target="_blank" rel="noopener" title="${esc(r.title)}">${esc(r.title)}</a></td><td class="sticky c3">${esc(r.promotion)}</td><td class="sticky c4">${rankValue(r)??'—'}</td>${vals}<td class="${dc}">${ds}</td><td>${esc(r.authors)}</td><td>${esc(r.publisher)}</td><td>${esc(r.id)}</td><td class="${!active?'status-missing':''}">${esc(stat)}</td></tr>`;
  }).join('');
  document.getElementById('tbody').innerHTML=htmlRows;
- document.getElementById('shown').textContent=`${rows.length.toLocaleString('ko-KR')} / ${DATA.rows.length.toLocaleString('ko-KR')}개 표시`;
+ document.getElementById('shown').textContent=`${rows.length.toLocaleString('ko-KR')} / ${currentRows().length.toLocaleString('ko-KR')}개 표시`;
  document.getElementById('empty').hidden=rows.length!==0;
 }
-
 [q,genre,presence].forEach(el=>el.addEventListener(el===q?'input':'change',render));
-document.getElementById('reset').addEventListener('click',()=>{q.value='';genre.value='';presence.value='all';sortState={key:DATA.times.length?`time:${DATA.times.length-1}`:'rank',dir:'desc'};header();render();q.focus()});
+seriesSel.addEventListener('change',()=>{
+ q.value='';genre.value='';presence.value='all';
+ sortState={key:latestIndex()>=0?`time:${latestIndex()}`:'rank',dir:'desc'};
+ updateSummary();header();render();
+});
+document.getElementById('reset').addEventListener('click',()=>{q.value='';genre.value='';presence.value='all';sortState={key:latestIndex()>=0?`time:${latestIndex()}`:'rank',dir:'desc'};header();render();q.focus()});
+
+updateSummary();
 
 // ----- 외부 라이브러리 없이 XLSX(OOXML ZIP, 무압축) 생성 -----
 function xmlEsc(v){return String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&apos;'}[m])).replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g,'');}
@@ -485,10 +546,11 @@ function xlsxCell(value,row,col,header=false){
  const txt=xmlEsc(value==null?'':value).slice(0,32767);return `<c r="${ref}"${style} t="inlineStr"><is><t xml:space="preserve">${txt}</t></is></c>`;
 }
 function buildXlsx(rows){
- const headers=['장르','제목','프로모션','순위',...DATA.times,'증감치','작가명','출판사','작품 ID','상태','작품 URL'];
- const matrix=[headers,...rows.map(r=>[r.genre,r.title,r.promotion,r.rank,...r.values,r.delta,r.authors,r.publisher,r.id,r.status,r.url])];
+ const idxs=selectedIndices();
+ const headers=['장르','제목','프로모션','순위',...idxs.map(i=>DATA.times[i]),'증감치','작가명','출판사','작품 ID','상태','작품 URL'];
+ const matrix=[headers,...rows.map(r=>[r.genre,r.title,r.promotion,rankValue(r),...idxs.map(i=>r.values[i]),deltaValue(r),r.authors,r.publisher,r.id,dynamicStatus(r),r.url])];
  const sheetRows=matrix.map((row,ri)=>`<row r="${ri+1}">${row.map((v,ci)=>xlsxCell(v,ri+1,ci+1,ri===0)).join('')}</row>`).join('');
- const widths=[10,42,16,9,...DATA.times.map(()=>16),12,24,24,16,28,48];
+ const widths=[10,42,16,9,...idxs.map(()=>16),12,24,24,16,28,48];
  const cols=widths.map((w,i)=>`<col min="${i+1}" max="${i+1}" width="${w}" customWidth="1"/>`).join('');
  const files={
  '[Content_Types].xml':'<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/></Types>',
@@ -503,7 +565,8 @@ function buildXlsx(rows){
 document.getElementById('excel').addEventListener('click',()=>{
  const bytes=buildXlsx(visibleRows),blob=new Blob([bytes],{type:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'}),a=document.createElement('a');
  const d=new Date(),pad=n=>String(n).padStart(2,'0');
- a.href=URL.createObjectURL(blob);a.download=`카카오쇼케이스_${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}_${pad(d.getHours())}${pad(d.getMinutes())}.xlsx`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1500);
+ const label=seriesLabel(seriesSel.value).replace(/\s+/g,'');
+ a.href=URL.createObjectURL(blob);a.download=`카카오쇼케이스_${label}_${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}_${pad(d.getHours())}${pad(d.getMinutes())}.xlsx`;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),1500);
 });
 
 header(); render();
