@@ -346,6 +346,7 @@ def render_html(path: Path, state: dict) -> None:
     <label for="sourceUrl">자동수집 설정</label>
     <input id="sourceUrl" type="url" spellcheck="false" readonly>
     <button id="openSettings" class="primary">수집 링크/기간 변경</button>
+    <button id="editPromotion">프로모션 수정</button>
     <button id="runNow">지금 한 번 수집</button>
     <span id="sourceState" class="sourcehint"></span>
   </div>
@@ -450,6 +451,7 @@ function openWorkflow(name){
  window.open(`${base}/actions/workflows/${name}`,'_blank','noopener');
 }
 document.getElementById('openSettings').addEventListener('click',()=>openWorkflow('settings.yml'));
+document.getElementById('editPromotion').addEventListener('click',()=>openWorkflow('promotion.yml'));
 document.getElementById('runNow').addEventListener('click',()=>openWorkflow('collect.yml'));
 
 function sortValue(r,key){
