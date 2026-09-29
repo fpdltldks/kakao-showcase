@@ -1,4 +1,4 @@
-name: 수집 설정 변경
+name: 수집 설정 / 프로모션 수정
 
 on:
   workflow_dispatch:
@@ -15,10 +15,19 @@ on:
         description: '종료일 YYYY-MM-DD (변경하지 않으면 비워두기)'
         required: false
         type: string
-      collect_now:
-        description: '설정 저장 후 오늘 데이터도 수집'
+      promotion_target:
+        description: '프로모션 수정: 작품 ID 또는 정확한 제목'
         required: false
-        default: true
+        type: string
+      promotion_text:
+        description: '프로모션 수정: 문구 (대상 입력 후 비우면 삭제)'
+        required: false
+        default: ''
+        type: string
+      collect_now:
+        description: '설정 저장 후 오늘 데이터도 즉시 수집'
+        required: false
+        default: false
         type: boolean
 
 permissions:
@@ -50,6 +59,13 @@ jobs:
           NEW_END_DATE: ${{ inputs.end_date }}
         run: python scripts/update_config.py
 
+      - name: 프로모션 저장
+        if: ${{ inputs.promotion_target != '' }}
+        env:
+          PROMOTION_TARGET: ${{ inputs.promotion_target }}
+          PROMOTION_TEXT: ${{ inputs.promotion_text }}
+        run: python scripts/update_promotion.py
+
       - name: 필요하면 즉시 수집
         if: ${{ inputs.collect_now }}
         run: python cloud_collect.py
@@ -62,7 +78,7 @@ jobs:
           if git diff --cached --quiet; then
             echo "저장할 변경 내용이 없습니다."
           else
-            git commit -m "수집 설정 변경"
+            git commit -m "수집 설정 / 프로모션 수정"
             git push
           fi
 
