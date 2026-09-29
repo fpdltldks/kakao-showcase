@@ -134,7 +134,7 @@ function openWorkflow(name){
  window.open(`${base}/actions/workflows/${name}`,'_blank','noopener');
 }
 document.getElementById('openSettings').addEventListener('click',()=>openWorkflow('settings.yml'));
-document.getElementById('editPromotion').addEventListener('click',()=>openWorkflow('promotion.yml'));
+document.getElementById('editPromotion').addEventListener('click',()=>openWorkflow('settings.yml'));
 document.getElementById('runNow').addEventListener('click',()=>openWorkflow('collect.yml'));
 
 function sortValue(r,key){
