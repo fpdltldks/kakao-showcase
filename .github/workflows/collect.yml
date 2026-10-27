@@ -2,8 +2,8 @@ name: 매일 오전 11시 30분 데이터 수집
 
 on:
   schedule:
-    - cron: '30 11 * * *'
-      timezone: 'Asia/Seoul'
+    # GitHub 기본 시간대 UTC: 02:30 UTC = 한국 시간 11:30
+    - cron: '30 2 * * *'
   workflow_dispatch:
     inputs:
       force_same_day:
