@@ -1,6 +1,9 @@
 name: 매일 오전 11시 30분 데이터 수집
 
 on:
+  push:
+    branches: [main]
+    paths: ['index.html']
   schedule:
     # GitHub 기본 시간대 UTC: 02:30 UTC = 한국 시간 11:30
     - cron: '30 2 * * *'
