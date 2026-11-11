@@ -130,7 +130,7 @@
     "69637657": {
       "id": "69637657",
       "genre": "현판",
-      "promotion": "",
+      "promotion": "오픈런(돌발)",
       "values": [
         null,
         null,
@@ -3326,7 +3326,7 @@
     "70716953": {
       "id": "70716953",
       "genre": "판타지",
-      "promotion": "오픈런",
+      "promotion": "오픈런(돌발)",
       "values": [
         null,
         null,
@@ -3394,7 +3394,7 @@
     "70717294": {
       "id": "70717294",
       "genre": "판타지",
-      "promotion": "오픈런",
+      "promotion": "오픈런(돌발)",
       "values": [
         null,
         null,
@@ -4346,7 +4346,7 @@
     "70764144": {
       "id": "70764144",
       "genre": "판타지",
-      "promotion": "오리지널",
+      "promotion": "오리지널(돌발)",
       "values": [
         null,
         null,
