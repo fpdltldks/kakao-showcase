@@ -1,0 +1,1334 @@
+{
+  "showcase_id": "16141",
+  "month": "2026-11",
+  "checked_at": "2026-11-13T11:33:30.589105+09:00",
+  "method": "KakaoPage notice tab public backing API: /api/gateway/api/v1/content/notice; all pages, top_notice descriptions and event banners",
+  "results": [
+    {
+      "id": "69637657",
+      "title": "회귀한 천재 스위치 투수가 마운드를 씹어먹음",
+      "url": "https://page.kakao.com/content/69637657/?tab_type=notice",
+      "checked_at": "2026-11-13T11:31:07.417071+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 2,
+      "event_banner_count": 3,
+      "matched_promotions": [
+        "오리지널",
+        "돌발"
+      ],
+      "promotion_before": "오픈런(돌발)",
+      "action": "preserve_verified_promotion",
+      "notices": [
+        {
+          "uid": 238647,
+          "title": "5연참 안내(11/11~11/15)",
+          "created_at": "2026-11-11T10:01:02+09:00",
+          "modified_at": "2026-11-11T10:01:03+09:00",
+          "url": "https://page.kakao.com/content/69637657/?tab_type=notice",
+          "body_sha256": "8f0412fdc0bb25901499367eef9e5d52d9ad5080e96608fc9f1d143196c71a61"
+        },
+        {
+          "uid": 235120,
+          "title": "연재 주기 안내",
+          "created_at": "2026-09-18T11:07:10+09:00",
+          "modified_at": "2026-09-18T11:07:10+09:00",
+          "url": "https://page.kakao.com/content/69637657/?tab_type=notice",
+          "body_sha256": "428871b168407c80f663572b14a743c12e58758483a758ccafbe51d4e714e03e"
+        }
+      ],
+      "reported_total_count": 1,
+      "listed_notices_per_page": [
+        1
+      ],
+      "banners": [
+        {
+          "uid": 221521,
+          "title": "금토일엔 카카페에서!",
+          "sub_title": "1캐시만 써도 혜택드려요!",
+          "scheme": "kakaopage://open/webview/event?hash_uid=8e8235524d6b04d48f43781496638530"
+        },
+        {
+          "uid": 220289,
+          "title": "돌발 퀘스트 발생!",
+          "sub_title": "열람하면 최대 3천 캐시!",
+          "scheme": "kakaopage://open/webview/event?hash_uid=856bf711afce3c2feaeec5ec7d1b650f"
+        },
+        {
+          "uid": 220865,
+          "title": "회귀한 천재 스위치…",
+          "sub_title": "열람하면 최대 3천 캐시!",
+          "scheme": "kakaopage://open/landing/series/list?reference=page%2Flanding%2F19594"
+        }
+      ],
+      "promotion_after": "오픈런(돌발)",
+      "prior_evidence": "data/promotion_checks/16141_2026-11-11.json"
+    },
+    {
+      "id": "69696544",
+      "title": "과속으로 천마신교 데릴사위",
+      "url": "https://page.kakao.com/content/69696544/?tab_type=notice",
+      "checked_at": "2026-11-13T11:31:07.421619+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 3,
+      "event_banner_count": 0,
+      "matched_promotions": [],
+      "promotion_before": "",
+      "action": "keep_blank_until_Nov30",
+      "notices": [
+        {
+          "uid": 230003,
+          "title": "<과속으로 천마신교 데릴사위> 론칭 안내",
+          "created_at": "2026-07-07T11:19:18+09:00",
+          "modified_at": "2026-09-23T09:17:50+09:00",
+          "url": "https://page.kakao.com/content/69696544/?tab_type=notice",
+          "body_sha256": "afaeb42258e4ee4258aba16dc49b9fde98b5cafc41832ea92791c1d9e73e7bf6"
+        },
+        {
+          "uid": 235748,
+          "title": "파일 교체 안내",
+          "created_at": "2026-09-28T13:29:13+09:00",
+          "modified_at": "2026-09-29T13:28:41+09:00",
+          "url": "https://page.kakao.com/content/69696544/?tab_type=notice",
+          "body_sha256": "e0f3570ea8df20ccb3fbf6d3dde0d751e62db1e44b89dfb7b978983842cb0301"
+        },
+        {
+          "uid": 234515,
+          "title": "<과속으로 천마신교 데릴사위> 삽화 안내",
+          "created_at": "2026-09-23T00:01:03+09:00",
+          "modified_at": "2026-09-23T00:01:03+09:00",
+          "url": "https://page.kakao.com/content/69696544/?tab_type=notice",
+          "body_sha256": "a8333abbc25c682756925e745b1ab4f3d6eaac1983c593a384e6edf47adae0d8"
+        }
+      ],
+      "reported_total_count": 2,
+      "listed_notices_per_page": [
+        2
+      ]
+    },
+    {
+      "id": "70240603",
+      "title": "전직 성녀가 산부인과를 열었다",
+      "url": "https://page.kakao.com/content/70240603/?tab_type=notice",
+      "checked_at": "2026-11-13T11:31:07.423417+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 3,
+      "event_banner_count": 0,
+      "matched_promotions": [],
+      "promotion_before": "",
+      "action": "keep_blank_until_Nov30",
+      "notices": [
+        {
+          "uid": 238065,
+          "title": "17화 원고 수정 안내 (11/2)",
+          "created_at": "2026-11-02T10:55:01+09:00",
+          "modified_at": "2026-11-02T10:55:01+09:00",
+          "url": "https://page.kakao.com/content/70240603/?tab_type=notice",
+          "body_sha256": "feb433f9c1df29604171323753637102788af4f48eeef575d87ae02788a40cc3"
+        },
+        {
+          "uid": 237758,
+          "title": "원고 수정 안내 (10/27)",
+          "created_at": "2026-10-27T16:26:32+09:00",
+          "modified_at": "2026-10-27T16:34:01+09:00",
+          "url": "https://page.kakao.com/content/70240603/?tab_type=notice",
+          "body_sha256": "0cb6ed7a3acc26fa375723506fbeb1ebce074133e6bcd681dd8334ec39a5448c"
+        },
+        {
+          "uid": 235123,
+          "title": "연재 주기 안내",
+          "created_at": "2026-09-18T11:30:53+09:00",
+          "modified_at": "2026-09-18T11:30:53+09:00",
+          "url": "https://page.kakao.com/content/70240603/?tab_type=notice",
+          "body_sha256": "0ec4e965f2d47ccde7d415d569bb495ccddccbc418f698fe7277c94e03e1766b"
+        }
+      ],
+      "reported_total_count": 2,
+      "listed_notices_per_page": [
+        2
+      ]
+    },
+    {
+      "id": "70287633",
+      "title": "미래를 읽는 상권분석가",
+      "url": "https://page.kakao.com/content/70287633/?tab_type=notice",
+      "checked_at": "2026-11-13T11:31:15.238648+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 1,
+      "event_banner_count": 1,
+      "matched_promotions": [
+        "오리지널"
+      ],
+      "promotion_before": "오리지널",
+      "action": "preserve_verified_promotion",
+      "notices": [
+        {
+          "uid": 235540,
+          "title": "연재 주기 안내",
+          "created_at": "2026-09-23T14:22:43+09:00",
+          "modified_at": "2026-09-23T14:22:43+09:00",
+          "url": "https://page.kakao.com/content/70287633/?tab_type=notice",
+          "body_sha256": "fed60f9c72a620808df238d7645b098fe8195aa8d839255a6f04b292691226b9"
+        }
+      ],
+      "reported_total_count": 1,
+      "listed_notices_per_page": [
+        1
+      ],
+      "banners": [
+        {
+          "uid": 220075,
+          "title": "미래를 읽는 상권분석가",
+          "sub_title": "열람하면 최대 3천 캐시!",
+          "scheme": "kakaopage://open/landing/series/list?reference=page%2Flanding%2F19532"
+        }
+      ],
+      "promotion_after": "오리지널"
+    },
+    {
+      "id": "70338621",
+      "title": "탑 등반이 싫어서 게이트를 열었다",
+      "url": "https://page.kakao.com/content/70338621/?tab_type=notice",
+      "checked_at": "2026-11-13T11:31:15.181099+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 0,
+      "event_banner_count": 0,
+      "matched_promotions": [],
+      "promotion_before": "",
+      "action": "keep_blank_until_Nov30",
+      "notices": [],
+      "reported_total_count": 0,
+      "listed_notices_per_page": [
+        0
+      ]
+    },
+    {
+      "id": "70580150",
+      "title": "회귀한 무신은 즉사기로 탑을 공략한다",
+      "url": "https://page.kakao.com/content/70580150/?tab_type=notice",
+      "checked_at": "2026-11-13T11:31:15.236156+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 1,
+      "event_banner_count": 0,
+      "matched_promotions": [],
+      "promotion_before": "",
+      "action": "keep_blank_until_Nov30",
+      "notices": [
+        {
+          "uid": 235125,
+          "title": "연재 주기 안내",
+          "created_at": "2026-09-18T11:37:44+09:00",
+          "modified_at": "2026-09-18T11:37:44+09:00",
+          "url": "https://page.kakao.com/content/70580150/?tab_type=notice",
+          "body_sha256": "2aa6087a5f180ec66e087921ef703bf6028e824d5e6e8fd0d729981216d0c493"
+        }
+      ],
+      "reported_total_count": 0,
+      "listed_notices_per_page": [
+        0
+      ]
+    },
+    {
+      "id": "70603972",
+      "title": "마탑의 선협천재",
+      "url": "https://page.kakao.com/content/70603972/?tab_type=notice",
+      "checked_at": "2026-11-13T11:31:23.530072+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 7,
+      "event_banner_count": 0,
+      "matched_promotions": [],
+      "promotion_before": "",
+      "action": "keep_blank_until_Nov30",
+      "notices": [
+        {
+          "uid": 237552,
+          "title": "연재 주기 변경 안내(1023)",
+          "created_at": "2026-10-23T14:20:00+09:00",
+          "modified_at": "2026-10-23T14:20:00+09:00",
+          "url": "https://page.kakao.com/content/70603972/?tab_type=notice",
+          "body_sha256": "ffe5f84d4aa02ad339213f70d9ed289091f5296dc9e47763f4cb86048724a5b5"
+        },
+        {
+          "uid": 237047,
+          "title": "원고 교체 안내(1015)",
+          "created_at": "2026-10-15T14:58:04+09:00",
+          "modified_at": "2026-10-15T14:58:04+09:00",
+          "url": "https://page.kakao.com/content/70603972/?tab_type=notice",
+          "body_sha256": "8a981d312219b96f17ce2567052e4d86768f97cae6eebe2e6030fdf15fef228e"
+        },
+        {
+          "uid": 236493,
+          "title": "원고 교체 안내(1007)",
+          "created_at": "2026-10-07T10:43:59+09:00",
+          "modified_at": "2026-10-07T10:44:54+09:00",
+          "url": "https://page.kakao.com/content/70603972/?tab_type=notice",
+          "body_sha256": "33a2d99f884176789259a7a6996bd61fc273d85ef6a0e4585cc388861c04dc39"
+        },
+        {
+          "uid": 236078,
+          "title": "원고 교체 안내(1001)",
+          "created_at": "2026-10-01T15:44:34+09:00",
+          "modified_at": "2026-10-01T15:44:34+09:00",
+          "url": "https://page.kakao.com/content/70603972/?tab_type=notice",
+          "body_sha256": "9da4ae249fee4cdf8ca1d80361b252cbeba565416573b4b2a41a259bc02087d9"
+        },
+        {
+          "uid": 235732,
+          "title": "원고 교체 안내(0928)",
+          "created_at": "2026-09-28T10:59:54+09:00",
+          "modified_at": "2026-09-28T10:59:54+09:00",
+          "url": "https://page.kakao.com/content/70603972/?tab_type=notice",
+          "body_sha256": "3c61046e32c45590f5b5efa345ee2b8518ad02e57647bc4451bd8965621831f1"
+        },
+        {
+          "uid": 235656,
+          "title": "원고 교체 안내(0924)",
+          "created_at": "2026-09-24T13:48:28+09:00",
+          "modified_at": "2026-09-24T13:48:28+09:00",
+          "url": "https://page.kakao.com/content/70603972/?tab_type=notice",
+          "body_sha256": "08ab6ce690111f951efe05e1eac686c3d2763f84c0a5ea1f67ef205206c812d3"
+        },
+        {
+          "uid": 234682,
+          "title": "연재 일정 안내(0923)",
+          "created_at": "2026-09-14T16:00:10+09:00",
+          "modified_at": "2026-09-14T16:00:10+09:00",
+          "url": "https://page.kakao.com/content/70603972/?tab_type=notice",
+          "body_sha256": "59112fcfb89d8fb1ba2693b1b491d21d4937e2acebcaffb006c5622034262ada"
+        }
+      ],
+      "reported_total_count": 6,
+      "listed_notices_per_page": [
+        6
+      ]
+    },
+    {
+      "id": "70625440",
+      "title": "미래를 보는 회사원",
+      "url": "https://page.kakao.com/content/70625440/?tab_type=notice",
+      "checked_at": "2026-11-13T11:31:23.334002+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 1,
+      "event_banner_count": 0,
+      "matched_promotions": [],
+      "promotion_before": "",
+      "action": "keep_blank_until_Nov30",
+      "notices": [
+        {
+          "uid": 235528,
+          "title": "* 연재 주기 안내",
+          "created_at": "2026-09-23T14:01:03+09:00",
+          "modified_at": "2026-09-23T14:01:03+09:00",
+          "url": "https://page.kakao.com/content/70625440/?tab_type=notice",
+          "body_sha256": "eee47160b80c72aefd7c2148aad9a5e0fbd5eb9f4b53708d46c7466ad8f60204"
+        }
+      ],
+      "reported_total_count": 0,
+      "listed_notices_per_page": [
+        0
+      ]
+    },
+    {
+      "id": "70628080",
+      "title": "무림 흑막 혈마가 혈공을 숨김",
+      "url": "https://page.kakao.com/content/70628080/?tab_type=notice",
+      "checked_at": "2026-11-13T11:31:23.326522+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 2,
+      "event_banner_count": 0,
+      "matched_promotions": [],
+      "promotion_before": "",
+      "action": "keep_blank_until_Nov30",
+      "notices": [
+        {
+          "uid": 238758,
+          "title": "연재 주기 변경(주 5회 연재)",
+          "created_at": "2026-11-12T09:54:19+09:00",
+          "modified_at": "2026-11-12T09:54:19+09:00",
+          "url": "https://page.kakao.com/content/70628080/?tab_type=notice",
+          "body_sha256": "b0cff032d67f506b03a1bcc56bf05309f62cabfbf7ea43b872ad84539306051e"
+        },
+        {
+          "uid": 235713,
+          "title": "연재 주기 : 매일 12시",
+          "created_at": "2026-09-28T09:35:10+09:00",
+          "modified_at": "2026-09-28T09:35:10+09:00",
+          "url": "https://page.kakao.com/content/70628080/?tab_type=notice",
+          "body_sha256": "00201f2495a3476894d296348a19f986db1fb39836b2e102fb5cb79ffccb45ea"
+        }
+      ],
+      "reported_total_count": 1,
+      "listed_notices_per_page": [
+        1
+      ]
+    },
+    {
+      "id": "70629799",
+      "title": "무림 회계사",
+      "url": "https://page.kakao.com/content/70629799/?tab_type=notice",
+      "checked_at": "2026-11-13T11:31:34.335688+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 1,
+      "event_banner_count": 0,
+      "matched_promotions": [],
+      "promotion_before": "",
+      "action": "keep_blank_until_Nov30",
+      "notices": [
+        {
+          "uid": 235606,
+          "title": "*연재 주기 : 매일 오후 6시*",
+          "created_at": "2026-09-23T17:18:47+09:00",
+          "modified_at": "2026-09-23T17:18:47+09:00",
+          "url": "https://page.kakao.com/content/70629799/?tab_type=notice",
+          "body_sha256": "df8476ff972b1bb37f49ef1596c97e6c0a426b87ad2ab60ca82f1ad547a27b43"
+        }
+      ],
+      "reported_total_count": 0,
+      "listed_notices_per_page": [
+        0
+      ]
+    },
+    {
+      "id": "70630580",
+      "title": "회귀한 작가는 천재 감독이 되었다",
+      "url": "https://page.kakao.com/content/70630580/?tab_type=notice",
+      "checked_at": "2026-11-13T11:31:34.315936+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 1,
+      "event_banner_count": 0,
+      "matched_promotions": [],
+      "promotion_before": "",
+      "action": "keep_blank_until_Nov30",
+      "notices": [
+        {
+          "uid": 235612,
+          "title": "연재 주기 : 매일 18시",
+          "created_at": "2026-09-23T17:26:15+09:00",
+          "modified_at": "2026-09-23T17:26:15+09:00",
+          "url": "https://page.kakao.com/content/70630580/?tab_type=notice",
+          "body_sha256": "c0eca3b7cb629236a01233a275db76515855e32b633781bd6c4fba28107c1684"
+        }
+      ],
+      "reported_total_count": 0,
+      "listed_notices_per_page": [
+        0
+      ]
+    },
+    {
+      "id": "70692753",
+      "title": "마교의 대화수단이 훌륭함",
+      "url": "https://page.kakao.com/content/70692753/?tab_type=notice",
+      "checked_at": "2026-11-13T11:31:34.474951+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 1,
+      "event_banner_count": 1,
+      "matched_promotions": [
+        "오리지널"
+      ],
+      "promotion_before": "오리지널",
+      "action": "preserve_verified_promotion",
+      "notices": [
+        {
+          "uid": 238789,
+          "title": "연재주기 변경 안내",
+          "created_at": "2026-11-12T17:51:03+09:00",
+          "modified_at": "2026-11-12T17:51:03+09:00",
+          "url": "https://page.kakao.com/content/70692753/?tab_type=notice",
+          "body_sha256": "59bc240d9d1cfc7dafa48ac3fae09c8c3308fd7bc08900be516f1b14fd2d8139"
+        }
+      ],
+      "reported_total_count": 0,
+      "listed_notices_per_page": [
+        0
+      ],
+      "banners": [
+        {
+          "uid": 220204,
+          "title": "마교의 대화수단이 훌…",
+          "sub_title": "열람하면 최대 3천 캐시!",
+          "scheme": "kakaopage://open/landing/series/list?reference=page%2Flanding%2F19543"
+        }
+      ],
+      "promotion_after": "오리지널"
+    },
+    {
+      "id": "70710852",
+      "title": "그림자 세계의 미친 칼잡이",
+      "url": "https://page.kakao.com/content/70710852/?tab_type=notice",
+      "checked_at": "2026-11-13T11:31:42.977906+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 2,
+      "event_banner_count": 2,
+      "matched_promotions": [
+        "오리지널",
+        "돌발"
+      ],
+      "promotion_before": "오리지널(돌발)",
+      "action": "preserve_verified_promotion",
+      "notices": [
+        {
+          "uid": 238757,
+          "title": "연참 안내",
+          "created_at": "2026-11-12T12:01:03+09:00",
+          "modified_at": "2026-11-12T12:01:03+09:00",
+          "url": "https://page.kakao.com/content/70710852/?tab_type=notice",
+          "body_sha256": "be28aacda22afa835ed565304e6cad3aca1df53bb1047948e7e454c439d0ba95"
+        },
+        {
+          "uid": 235283,
+          "title": "연재 주기 공지",
+          "created_at": "2026-09-23T11:31:03+09:00",
+          "modified_at": "2026-10-01T18:04:13+09:00",
+          "url": "https://page.kakao.com/content/70710852/?tab_type=notice",
+          "body_sha256": "93540be501c698bf0961796a79170039c28c170f6ce2da726da07f62e6247ef2"
+        }
+      ],
+      "reported_total_count": 2,
+      "listed_notices_per_page": [
+        2
+      ],
+      "banners": [
+        {
+          "uid": 221198,
+          "title": "그림자 세계의 미친…",
+          "sub_title": "열람하면 최대 3천 캐시!",
+          "scheme": "kakaopage://open/landing/series/list?reference=page%2Flanding%2F19618"
+        },
+        {
+          "uid": 220289,
+          "title": "돌발 퀘스트 발생!",
+          "sub_title": "열람하면 최대 3천 캐시!",
+          "scheme": "kakaopage://open/webview/event?hash_uid=856bf711afce3c2feaeec5ec7d1b650f"
+        }
+      ],
+      "promotion_after": "오리지널(돌발)"
+    },
+    {
+      "id": "70710981",
+      "title": "영웅으로 키웠더니 영웅을 키움",
+      "url": "https://page.kakao.com/content/70710981/?tab_type=notice",
+      "checked_at": "2026-11-13T11:31:42.946120+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 3,
+      "event_banner_count": 0,
+      "matched_promotions": [],
+      "promotion_before": "",
+      "action": "keep_blank_until_Nov30",
+      "notices": [
+        {
+          "uid": 237988,
+          "title": "연재 주기 변경(10/31)",
+          "created_at": "2026-10-31T17:31:03+09:00",
+          "modified_at": "2026-10-31T17:31:03+09:00",
+          "url": "https://page.kakao.com/content/70710981/?tab_type=notice",
+          "body_sha256": "1c0a6cf71051d0399bb844d4e5664127859f4dadd7336cc0dddcf5ebe84a9dbd"
+        },
+        {
+          "uid": 235786,
+          "title": "제목 변경 안내",
+          "created_at": "2026-09-28T16:23:15+09:00",
+          "modified_at": "2026-10-01T18:04:12+09:00",
+          "url": "https://page.kakao.com/content/70710981/?tab_type=notice",
+          "body_sha256": "bc573bb6d56b3687f01562061e702f99a24a3c3fabfa5338c40f05688c10deec"
+        },
+        {
+          "uid": 235281,
+          "title": "연재 주기 공지",
+          "created_at": "2026-09-23T11:31:03+09:00",
+          "modified_at": "2026-10-01T18:04:12+09:00",
+          "url": "https://page.kakao.com/content/70710981/?tab_type=notice",
+          "body_sha256": "cc187513037236faadf40b88d6e8526e21b416dea9280854367a5bc84e3b6a4e"
+        }
+      ],
+      "reported_total_count": 3,
+      "listed_notices_per_page": [
+        3
+      ]
+    },
+    {
+      "id": "70711321",
+      "title": "70억을 죽인 재앙급 공무원",
+      "url": "https://page.kakao.com/content/70711321/?tab_type=notice",
+      "checked_at": "2026-11-13T11:31:43.125363+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 1,
+      "event_banner_count": 0,
+      "matched_promotions": [],
+      "promotion_before": "",
+      "action": "keep_blank_until_Nov30",
+      "notices": [
+        {
+          "uid": 234633,
+          "title": "연재 주기 안내",
+          "created_at": "2026-09-14T10:38:40+09:00",
+          "modified_at": "2026-09-22T18:17:47+09:00",
+          "url": "https://page.kakao.com/content/70711321/?tab_type=notice",
+          "body_sha256": "c86ce7efab2a58ae2f4c3851df7a16685937a398408106d3e184c4b07464ec30"
+        }
+      ],
+      "reported_total_count": 0,
+      "listed_notices_per_page": [
+        0
+      ]
+    },
+    {
+      "id": "70713654",
+      "title": "맹약으로 초월하는 검술 천재",
+      "url": "https://page.kakao.com/content/70713654/?tab_type=notice",
+      "checked_at": "2026-11-13T11:31:50.414304+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 2,
+      "event_banner_count": 0,
+      "matched_promotions": [],
+      "promotion_before": "",
+      "action": "keep_blank_until_Nov30",
+      "notices": [
+        {
+          "uid": 238276,
+          "title": "연재 주기 변경 안내",
+          "created_at": "2026-11-09T00:01:03+09:00",
+          "modified_at": "2026-11-09T00:01:03+09:00",
+          "url": "https://page.kakao.com/content/70713654/?tab_type=notice",
+          "body_sha256": "841fef7f28cf68e4c2619f473178aec4da0454175a6f106bffbd6cf361768d37"
+        },
+        {
+          "uid": 234962,
+          "title": "[연재 주기 안내] 매일 00시",
+          "created_at": "2026-09-16T17:33:03+09:00",
+          "modified_at": "2026-09-16T17:34:21+09:00",
+          "url": "https://page.kakao.com/content/70713654/?tab_type=notice",
+          "body_sha256": "990ab1f2b53e4c4a8395f4dcbcc64738975de10d794ad12e605fa5864c00b5aa"
+        }
+      ],
+      "reported_total_count": 2,
+      "listed_notices_per_page": [
+        2
+      ]
+    },
+    {
+      "id": "70716953",
+      "title": "초월자들의 호감 뉴비가 되었다",
+      "url": "https://page.kakao.com/content/70716953/?tab_type=notice",
+      "checked_at": "2026-11-13T11:31:50.576071+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 1,
+      "event_banner_count": 2,
+      "matched_promotions": [
+        "오리지널",
+        "돌발"
+      ],
+      "promotion_before": "오픈런(돌발)",
+      "action": "preserve_verified_promotion",
+      "notices": [
+        {
+          "uid": 238473,
+          "title": "[연재 주기 변경 안내 - 매일 18시]",
+          "created_at": "2026-11-08T04:58:05+09:00",
+          "modified_at": "2026-11-08T04:58:05+09:00",
+          "url": "https://page.kakao.com/content/70716953/?tab_type=notice",
+          "body_sha256": "f9136dc4032d01f915ed308491dd76aa95ee3b798741896dd143fa7c47d67d2a"
+        }
+      ],
+      "reported_total_count": 0,
+      "listed_notices_per_page": [
+        0
+      ],
+      "banners": [
+        {
+          "uid": 220289,
+          "title": "돌발 퀘스트 발생!",
+          "sub_title": "열람하면 최대 3천 캐시!",
+          "scheme": "kakaopage://open/webview/event?hash_uid=856bf711afce3c2feaeec5ec7d1b650f"
+        },
+        {
+          "uid": 220396,
+          "title": "초월자들의 호감 뉴비…",
+          "sub_title": "열람하면 최대 3천 캐시!",
+          "scheme": "kakaopage://open/landing/series/list?reference=page%2Flanding%2F19565"
+        }
+      ],
+      "promotion_after": "오픈런(돌발)",
+      "prior_evidence": "data/promotion_checks/16141_2026-11-08.json"
+    },
+    {
+      "id": "70717294",
+      "title": "탑에 살림차렸더니, 돈이 너무 쉬움",
+      "url": "https://page.kakao.com/content/70717294/?tab_type=notice",
+      "checked_at": "2026-11-13T11:31:50.462968+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 5,
+      "event_banner_count": 2,
+      "matched_promotions": [
+        "오리지널",
+        "돌발"
+      ],
+      "promotion_before": "오픈런(돌발)",
+      "action": "preserve_verified_promotion",
+      "notices": [
+        {
+          "uid": 238086,
+          "title": "★ 연참 안내 ★",
+          "created_at": "2026-11-03T18:01:03+09:00",
+          "modified_at": "2026-11-03T18:01:03+09:00",
+          "url": "https://page.kakao.com/content/70717294/?tab_type=notice",
+          "body_sha256": "5e7d168554f9c9dab5d82b0194ed79b2a5634dea34a725357516b16445f050ce"
+        },
+        {
+          "uid": 238788,
+          "title": "이모티콘 수정 안내",
+          "created_at": "2026-11-12T16:01:03+09:00",
+          "modified_at": "2026-11-12T16:12:42+09:00",
+          "url": "https://page.kakao.com/content/70717294/?tab_type=notice",
+          "body_sha256": "3eefc7f66364550a6ebc9f65cddc734e577d27207a6e6d142df253b3202411e9"
+        },
+        {
+          "uid": 238301,
+          "title": "오탈자 수정 안내",
+          "created_at": "2026-11-05T14:31:03+09:00",
+          "modified_at": "2026-11-05T15:21:52+09:00",
+          "url": "https://page.kakao.com/content/70717294/?tab_type=notice",
+          "body_sha256": "ac83f64373136eed31d237b2dd479382420f02d45a5635ba011a9f02d7eb0603"
+        },
+        {
+          "uid": 235727,
+          "title": "오탈자 수정 안내",
+          "created_at": "2026-09-28T11:11:03+09:00",
+          "modified_at": "2026-10-07T09:37:43+09:00",
+          "url": "https://page.kakao.com/content/70717294/?tab_type=notice",
+          "body_sha256": "4b73a59c5a8b6e344b1b441fefe18b98011689b6d42cce7a75262a858540e669"
+        },
+        {
+          "uid": 235502,
+          "title": "★매일 연재★",
+          "created_at": "2026-09-23T12:01:03+09:00",
+          "modified_at": "2026-09-23T12:01:03+09:00",
+          "url": "https://page.kakao.com/content/70717294/?tab_type=notice",
+          "body_sha256": "819f3ad592575453cd32b915b5e2374ee6abb0e0a4bc0942eb2e10c2705ee374"
+        }
+      ],
+      "reported_total_count": 4,
+      "listed_notices_per_page": [
+        4
+      ],
+      "banners": [
+        {
+          "uid": 220289,
+          "title": "돌발 퀘스트 발생!",
+          "sub_title": "열람하면 최대 3천 캐시!",
+          "scheme": "kakaopage://open/webview/event?hash_uid=856bf711afce3c2feaeec5ec7d1b650f"
+        },
+        {
+          "uid": 219760,
+          "title": "탑에 살림차렸더니,…",
+          "sub_title": "열람하면 최대 3천 캐시!",
+          "scheme": "kakaopage://open/landing/series/list?reference=page%2Flanding%2F19516"
+        }
+      ],
+      "promotion_after": "오픈런(돌발)",
+      "prior_evidence": "data/promotion_checks/16141_2026-11-04.json"
+    },
+    {
+      "id": "70719253",
+      "title": "다시 태어난 소드마스터",
+      "url": "https://page.kakao.com/content/70719253/?tab_type=notice",
+      "checked_at": "2026-11-13T11:32:00.438592+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 0,
+      "event_banner_count": 0,
+      "matched_promotions": [],
+      "promotion_before": "",
+      "action": "keep_blank_until_Nov30",
+      "notices": [],
+      "reported_total_count": 0,
+      "listed_notices_per_page": [
+        0
+      ]
+    },
+    {
+      "id": "70728856",
+      "title": "천하제일인인데 나만 모름",
+      "url": "https://page.kakao.com/content/70728856/?tab_type=notice",
+      "checked_at": "2026-11-13T11:32:06.109882+09:00",
+      "complete": false,
+      "page_count": 2,
+      "notice_count": 2,
+      "event_banner_count": 2,
+      "matched_promotions": [
+        "오리지널"
+      ],
+      "promotion_before": "오리지널",
+      "action": "preserve_verified_promotion",
+      "notices": [
+        {
+          "uid": 238650,
+          "title": "★ 조기 오픈 회차 이용권 원복 안내",
+          "created_at": "2026-11-10T17:01:04+09:00",
+          "modified_at": "2026-11-10T17:01:04+09:00",
+          "url": "https://page.kakao.com/content/70728856/?tab_type=notice",
+          "body_sha256": "751f78c7a15db7ed29f71cb68c8a0ed4cc7d3e3c18bd53c13200cbf314c11f77"
+        },
+        {
+          "uid": 234728,
+          "title": "★ 연재 주기 안내",
+          "created_at": "2026-09-23T11:31:03+09:00",
+          "modified_at": "2026-10-15T09:10:10+09:00",
+          "url": "https://page.kakao.com/content/70728856/?tab_type=notice",
+          "body_sha256": "fb669b637904a3ddb73ebef27a7788d87de93079b2a17f67e0e4bc70631ec323"
+        }
+      ],
+      "error": "Reported total_count exceeds accessible notices; completeness unverified even after checking next page.",
+      "reported_total_count": 3,
+      "listed_notices_per_page": [
+        2,
+        0
+      ],
+      "banners": [
+        {
+          "uid": 221521,
+          "title": "금토일엔 카카페에서!",
+          "sub_title": "1캐시만 써도 혜택드려요!",
+          "scheme": "kakaopage://open/webview/event?hash_uid=8e8235524d6b04d48f43781496638530"
+        },
+        {
+          "uid": 220359,
+          "title": "천하제일인인데 나만…",
+          "sub_title": "열람하면 최대 3천 캐시!",
+          "scheme": "kakaopage://open/landing/series/list?reference=page%2Flanding%2F19562"
+        }
+      ],
+      "promotion_after": "오리지널"
+    },
+    {
+      "id": "70732697",
+      "title": "전능의 점자 마도서를 얻었다",
+      "url": "https://page.kakao.com/content/70732697/?tab_type=notice",
+      "checked_at": "2026-11-13T11:32:00.442247+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 4,
+      "event_banner_count": 0,
+      "matched_promotions": [],
+      "promotion_before": "",
+      "action": "keep_blank_until_Nov30",
+      "notices": [
+        {
+          "uid": 235503,
+          "title": "연재 주기 안내 (09.23)",
+          "created_at": "2026-09-23T11:47:28+09:00",
+          "modified_at": "2026-09-23T11:47:58+09:00",
+          "url": "https://page.kakao.com/content/70732697/?tab_type=notice",
+          "body_sha256": "ca6ee18f22ac07718419b6c18d445af91b0c44f49d0f0bd14a89dad335a34b2a"
+        },
+        {
+          "uid": 238811,
+          "title": "파일 교체 안내 (11.12)",
+          "created_at": "2026-11-12T17:06:00+09:00",
+          "modified_at": "2026-11-12T17:06:00+09:00",
+          "url": "https://page.kakao.com/content/70732697/?tab_type=notice",
+          "body_sha256": "01d9c2a0dd12c9de3c86c92e404299ce7caa5739be4c4be423a5e157708188a9"
+        },
+        {
+          "uid": 237564,
+          "title": "파일 교체 안내 (10.23)",
+          "created_at": "2026-10-23T15:36:08+09:00",
+          "modified_at": "2026-10-23T15:36:08+09:00",
+          "url": "https://page.kakao.com/content/70732697/?tab_type=notice",
+          "body_sha256": "88150e850018a9288ba5548dace42860adeeb515a791d118d32a14d510306d81"
+        },
+        {
+          "uid": 235505,
+          "title": "파일 교체 안내 (09.23)",
+          "created_at": "2026-09-23T11:54:12+09:00",
+          "modified_at": "2026-09-23T11:54:12+09:00",
+          "url": "https://page.kakao.com/content/70732697/?tab_type=notice",
+          "body_sha256": "e87510e702051d26766715a256d2f8bd1a518f680b539ef8b51ac95c0b4ca726"
+        }
+      ],
+      "reported_total_count": 3,
+      "listed_notices_per_page": [
+        3
+      ]
+    },
+    {
+      "id": "70732901",
+      "title": "쟁자수가 천마 갤러리를 얻었다",
+      "url": "https://page.kakao.com/content/70732901/?tab_type=notice",
+      "checked_at": "2026-11-13T11:32:12.474120+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 0,
+      "event_banner_count": 1,
+      "matched_promotions": [
+        "오리지널"
+      ],
+      "promotion_before": "오리지널",
+      "action": "preserve_verified_promotion",
+      "notices": [],
+      "reported_total_count": 0,
+      "listed_notices_per_page": [
+        0
+      ],
+      "banners": [
+        {
+          "uid": 219896,
+          "title": "쟁자수가 천마 갤러리…",
+          "sub_title": "열람하면 최대 3천 캐시!",
+          "scheme": "kakaopage://open/landing/series/list?reference=page%2Flanding%2F19520"
+        }
+      ],
+      "promotion_after": "오리지널"
+    },
+    {
+      "id": "70734034",
+      "title": "반로환동을 너무 잘함",
+      "url": "https://page.kakao.com/content/70734034/?tab_type=notice",
+      "checked_at": "2026-11-13T11:32:12.449928+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 1,
+      "event_banner_count": 0,
+      "matched_promotions": [],
+      "promotion_before": "",
+      "action": "keep_blank_until_Nov30",
+      "notices": [
+        {
+          "uid": 235124,
+          "title": "연재 주기 안내",
+          "created_at": "2026-09-18T11:36:35+09:00",
+          "modified_at": "2026-09-18T11:36:35+09:00",
+          "url": "https://page.kakao.com/content/70734034/?tab_type=notice",
+          "body_sha256": "17de0323a497764f98b17dac783ac77e31e4930cf920ef3f4388c874861c6e55"
+        }
+      ],
+      "reported_total_count": 0,
+      "listed_notices_per_page": [
+        0
+      ]
+    },
+    {
+      "id": "70735891",
+      "title": "네크로맨서는 은퇴하고 농부합니다",
+      "url": "https://page.kakao.com/content/70735891/?tab_type=notice",
+      "checked_at": "2026-11-13T11:32:19.264847+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 1,
+      "event_banner_count": 0,
+      "matched_promotions": [],
+      "promotion_before": "",
+      "action": "keep_blank_until_Nov30",
+      "notices": [
+        {
+          "uid": 235515,
+          "title": "연재 일정 안내드립니다(매일 18시)",
+          "created_at": "2026-09-23T13:01:38+09:00",
+          "modified_at": "2026-09-23T13:01:38+09:00",
+          "url": "https://page.kakao.com/content/70735891/?tab_type=notice",
+          "body_sha256": "42ff9180fc100b83a9a907c954e682f380e92033ce708ae66b3f942c52ddce08"
+        }
+      ],
+      "reported_total_count": 1,
+      "listed_notices_per_page": [
+        1
+      ]
+    },
+    {
+      "id": "70740789",
+      "title": "재앙급 퇴마사가 미국에서 너무 강함",
+      "url": "https://page.kakao.com/content/70740789/?tab_type=notice",
+      "checked_at": "2026-11-13T11:32:28.991890+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 4,
+      "event_banner_count": 0,
+      "matched_promotions": [],
+      "promotion_before": "",
+      "action": "keep_blank_until_Nov30",
+      "notices": [
+        {
+          "uid": 234805,
+          "title": "연재 주기 안내",
+          "created_at": "2026-09-15T17:40:32+09:00",
+          "modified_at": "2026-09-15T17:40:32+09:00",
+          "url": "https://page.kakao.com/content/70740789/?tab_type=notice",
+          "body_sha256": "61e8cefde71b72cf0f91fb9cbd3b7ae0e4c15d9c4f2a3c2c7308f77ba4a63283"
+        },
+        {
+          "uid": 238711,
+          "title": "회차 수정 안내(11/11)",
+          "created_at": "2026-11-11T14:57:16+09:00",
+          "modified_at": "2026-11-11T14:57:50+09:00",
+          "url": "https://page.kakao.com/content/70740789/?tab_type=notice",
+          "body_sha256": "a431856d4ddf2f1a362178e15927d10fb7bf8a77935c4c08fe2117817a43656c"
+        },
+        {
+          "uid": 237522,
+          "title": "회차 수정 안내(72, 78화)",
+          "created_at": "2026-10-22T19:49:03+09:00",
+          "modified_at": "2026-10-22T19:49:03+09:00",
+          "url": "https://page.kakao.com/content/70740789/?tab_type=notice",
+          "body_sha256": "9f637dfe1b383c55efe2164bc902c79f17a0d56aac3b8ec1985c1338afa74379"
+        },
+        {
+          "uid": 236816,
+          "title": "회차 수정 안내(10화)",
+          "created_at": "2026-10-12T17:32:37+09:00",
+          "modified_at": "2026-10-12T17:32:37+09:00",
+          "url": "https://page.kakao.com/content/70740789/?tab_type=notice",
+          "body_sha256": "a841c3e21a9e97b57b274c6bf4b26a2a4b579958ae46fcadd9cb9cfd5f55ab8a"
+        }
+      ],
+      "reported_total_count": 3,
+      "listed_notices_per_page": [
+        3
+      ]
+    },
+    {
+      "id": "70743164",
+      "title": "모용세가 막내아들",
+      "url": "https://page.kakao.com/content/70743164/?tab_type=notice",
+      "checked_at": "2026-11-13T11:32:29.029881+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 1,
+      "event_banner_count": 0,
+      "matched_promotions": [],
+      "promotion_before": "",
+      "action": "keep_blank_until_Nov30",
+      "notices": [
+        {
+          "uid": 234928,
+          "title": "연재 주기 안내",
+          "created_at": "2026-09-16T12:10:13+09:00",
+          "modified_at": "2026-10-23T12:12:38+09:00",
+          "url": "https://page.kakao.com/content/70743164/?tab_type=notice",
+          "body_sha256": "4ca4cbd2348725af811894a31d89046dc80f95db582478b711ca2f07401a13cb"
+        }
+      ],
+      "reported_total_count": 0,
+      "listed_notices_per_page": [
+        0
+      ]
+    },
+    {
+      "id": "70743735",
+      "title": "불사마제",
+      "url": "https://page.kakao.com/content/70743735/?tab_type=notice",
+      "checked_at": "2026-11-13T11:32:37.256860+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 1,
+      "event_banner_count": 0,
+      "matched_promotions": [],
+      "promotion_before": "",
+      "action": "keep_blank_until_Nov30",
+      "notices": [
+        {
+          "uid": 235119,
+          "title": "연재 주기 안내",
+          "created_at": "2026-09-18T11:06:01+09:00",
+          "modified_at": "2026-09-18T11:06:01+09:00",
+          "url": "https://page.kakao.com/content/70743735/?tab_type=notice",
+          "body_sha256": "043ade8a46ce53b8305d200986e58222136e75fd4cc25edbeaf34e220e625b17"
+        }
+      ],
+      "reported_total_count": 0,
+      "listed_notices_per_page": [
+        0
+      ]
+    },
+    {
+      "id": "70743881",
+      "title": "천재 배우가 쌍둥이를 숨김",
+      "url": "https://page.kakao.com/content/70743881/?tab_type=notice",
+      "checked_at": "2026-11-13T11:32:47.343550+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 6,
+      "event_banner_count": 0,
+      "matched_promotions": [],
+      "promotion_before": "",
+      "action": "keep_blank_until_Nov30",
+      "notices": [
+        {
+          "uid": 238468,
+          "title": "81화 업로드 안내(11/7)",
+          "created_at": "2026-11-07T20:01:03+09:00",
+          "modified_at": "2026-11-07T20:01:03+09:00",
+          "url": "https://page.kakao.com/content/70743881/?tab_type=notice",
+          "body_sha256": "81888b6550c993c7500fe59322a07d20d3848e44cf59ff22f6283b247fc746a2"
+        },
+        {
+          "uid": 238602,
+          "title": "휴재 공지(11/09)",
+          "created_at": "2026-11-09T19:33:48+09:00",
+          "modified_at": "2026-11-09T19:33:48+09:00",
+          "url": "https://page.kakao.com/content/70743881/?tab_type=notice",
+          "body_sha256": "81b0c7cf0aa31cc81e632d876338bcd9ee62b22d7b10f5692c376a48710f3cd3"
+        },
+        {
+          "uid": 237799,
+          "title": "회차 수정 안내(73화)",
+          "created_at": "2026-10-28T11:11:46+09:00",
+          "modified_at": "2026-10-28T11:11:46+09:00",
+          "url": "https://page.kakao.com/content/70743881/?tab_type=notice",
+          "body_sha256": "bae7777c0e2246089022bf79e74a1e23d12632b23a819b6218ca6318b2dc8e35"
+        },
+        {
+          "uid": 236346,
+          "title": "회차 수정 안내(48화, 54-57화)",
+          "created_at": "2026-10-03T19:00:15+09:00",
+          "modified_at": "2026-10-03T19:01:19+09:00",
+          "url": "https://page.kakao.com/content/70743881/?tab_type=notice",
+          "body_sha256": "0bdf97b13ee22330af69210779e841707aff50a1877e22fa42f5cae3aac24132"
+        },
+        {
+          "uid": 235873,
+          "title": "회차 수정 안내(43~50, 54화)",
+          "created_at": "2026-09-29T15:37:09+09:00",
+          "modified_at": "2026-09-29T15:37:09+09:00",
+          "url": "https://page.kakao.com/content/70743881/?tab_type=notice",
+          "body_sha256": "da7a5bd35ce65a9eaa40bf35658137ed23899bd0ea302b5bc0e2d999ec7036e3"
+        },
+        {
+          "uid": 234998,
+          "title": "연재 주기 안내",
+          "created_at": "2026-09-17T10:38:23+09:00",
+          "modified_at": "2026-10-15T10:15:22+09:00",
+          "url": "https://page.kakao.com/content/70743881/?tab_type=notice",
+          "body_sha256": "02fe86b122ab3f588d51121c6217be3589ea72239d0a7f28a8d9353d6abc18e0"
+        }
+      ],
+      "reported_total_count": 5,
+      "listed_notices_per_page": [
+        5
+      ]
+    },
+    {
+      "id": "70755271",
+      "title": "에겐남이 탑을 안 오름",
+      "url": "https://page.kakao.com/content/70755271/?tab_type=notice",
+      "checked_at": "2026-11-13T11:32:55.311771+09:00",
+      "complete": false,
+      "page_count": 2,
+      "notice_count": 1,
+      "event_banner_count": 0,
+      "matched_promotions": [],
+      "promotion_before": "",
+      "action": "keep_blank_unverified",
+      "notices": [
+        {
+          "uid": 235003,
+          "title": "★연재 안내(매일 오후 6시)★",
+          "created_at": "2026-09-17T11:16:42+09:00",
+          "modified_at": "2026-09-17T11:16:42+09:00",
+          "url": "https://page.kakao.com/content/70755271/?tab_type=notice",
+          "body_sha256": "aa1114acf00e5296e8c863f9f2d27b3edbd933219be85109d907a2444dadb914"
+        }
+      ],
+      "error": "Reported total_count exceeds accessible notices; completeness unverified even after checking next page.",
+      "reported_total_count": 2,
+      "listed_notices_per_page": [
+        1,
+        0
+      ]
+    },
+    {
+      "id": "70759726",
+      "title": "이세계 멤버들로 아이돌 데뷔합니다",
+      "url": "https://page.kakao.com/content/70759726/?tab_type=notice",
+      "checked_at": "2026-11-13T11:32:55.857580+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 1,
+      "event_banner_count": 0,
+      "matched_promotions": [],
+      "promotion_before": "",
+      "action": "keep_blank_until_Nov30",
+      "notices": [
+        {
+          "uid": 235562,
+          "title": "연재 주기 안내",
+          "created_at": "2026-09-23T15:42:03+09:00",
+          "modified_at": "2026-09-23T15:42:38+09:00",
+          "url": "https://page.kakao.com/content/70759726/?tab_type=notice",
+          "body_sha256": "e39c0da8b30dccf6f92342f25620deb4812f295c518cd9887a93d2909b8e7bb7"
+        }
+      ],
+      "reported_total_count": 1,
+      "listed_notices_per_page": [
+        1
+      ]
+    },
+    {
+      "id": "70763834",
+      "title": "회귀자의 괴담 탑 공략법",
+      "url": "https://page.kakao.com/content/70763834/?tab_type=notice",
+      "checked_at": "2026-11-13T11:33:05.529014+09:00",
+      "complete": false,
+      "page_count": 2,
+      "notice_count": 3,
+      "event_banner_count": 0,
+      "matched_promotions": [],
+      "promotion_before": "",
+      "action": "keep_blank_unverified",
+      "notices": [
+        {
+          "uid": 238191,
+          "title": "87화 내용 수정 안내",
+          "created_at": "2026-11-03T18:59:57+09:00",
+          "modified_at": "2026-11-03T18:59:57+09:00",
+          "url": "https://page.kakao.com/content/70763834/?tab_type=notice",
+          "body_sha256": "03b5b5183840c30a5a5507099bf8ec4b012578eb488275bbfcf4f00313c6d2f3"
+        },
+        {
+          "uid": 237533,
+          "title": "연재 주기 공지 [주5회 오후 6시]",
+          "created_at": "2026-10-23T18:01:03+09:00",
+          "modified_at": "2026-10-23T18:01:03+09:00",
+          "url": "https://page.kakao.com/content/70763834/?tab_type=notice",
+          "body_sha256": "b5a67cf36dd394507a523ff632f8cbffcdbe8ed1cb3acc42f04a8b5b4f56d341"
+        },
+        {
+          "uid": 235005,
+          "title": "연재 주기 공지 [주 7회 오후 6시]",
+          "created_at": "2026-09-17T11:27:39+09:00",
+          "modified_at": "2026-10-23T10:35:23+09:00",
+          "url": "https://page.kakao.com/content/70763834/?tab_type=notice",
+          "body_sha256": "2d7f48c3153b0424a50b763cb3cb3a64c9bde43c1d903dc1ea91fba1689eb8d3"
+        }
+      ],
+      "error": "Reported total_count exceeds accessible notices; completeness unverified even after checking next page.",
+      "reported_total_count": 7,
+      "listed_notices_per_page": [
+        3,
+        0
+      ]
+    },
+    {
+      "id": "70764144",
+      "title": "갓물주 능력의 헌터가 되었다",
+      "url": "https://page.kakao.com/content/70764144/?tab_type=notice",
+      "checked_at": "2026-11-13T11:33:06.036254+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 2,
+      "event_banner_count": 2,
+      "matched_promotions": [
+        "오리지널",
+        "돌발"
+      ],
+      "promotion_before": "오리지널(돌발)",
+      "action": "preserve_verified_promotion",
+      "notices": [
+        {
+          "uid": 238524,
+          "title": "연참 안내(11/10~11/16)",
+          "created_at": "2026-11-10T00:01:04+09:00",
+          "modified_at": "2026-11-10T00:01:04+09:00",
+          "url": "https://page.kakao.com/content/70764144/?tab_type=notice",
+          "body_sha256": "b110c008f9ff305d741a510a0721d983d51d15c8f7c5cb0022f491aa5cf0553f"
+        },
+        {
+          "uid": 235122,
+          "title": "연재 주기 안내",
+          "created_at": "2026-09-18T11:27:50+09:00",
+          "modified_at": "2026-09-18T11:27:50+09:00",
+          "url": "https://page.kakao.com/content/70764144/?tab_type=notice",
+          "body_sha256": "b753f6965c426d166228ff718f86eab39cf46905ba1b02e02a26653b5b8f18c2"
+        }
+      ],
+      "reported_total_count": 1,
+      "listed_notices_per_page": [
+        1
+      ],
+      "banners": [
+        {
+          "uid": 220289,
+          "title": "돌발 퀘스트 발생!",
+          "sub_title": "열람하면 최대 3천 캐시!",
+          "scheme": "kakaopage://open/webview/event?hash_uid=856bf711afce3c2feaeec5ec7d1b650f"
+        },
+        {
+          "uid": 220832,
+          "title": "갓물주 능력의 헌터가…",
+          "sub_title": "열람하면 최대 3천 캐시!",
+          "scheme": "kakaopage://open/landing/series/list?reference=page%2Flanding%2F19591"
+        }
+      ],
+      "promotion_after": "오리지널(돌발)"
+    },
+    {
+      "id": "70777027",
+      "title": "물려받은 양식장에 SSR급 영물이 굴러옴",
+      "url": "https://page.kakao.com/content/70777027/?tab_type=notice",
+      "checked_at": "2026-11-13T11:33:05.530136+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 1,
+      "event_banner_count": 0,
+      "matched_promotions": [],
+      "promotion_before": "",
+      "action": "keep_blank_until_Nov30",
+      "notices": [
+        {
+          "uid": 237685,
+          "title": "🎉연재 시간 안내 (월-금 19시 UP)",
+          "created_at": "2026-11-07T00:01:03+09:00",
+          "modified_at": "2026-11-07T00:01:04+09:00",
+          "url": "https://page.kakao.com/content/70777027/?tab_type=notice",
+          "body_sha256": "8d68433ab1e7cd90a32cf7469c4c5a4b77f8e606502bc08fcae1ba15c0939ebc"
+        }
+      ],
+      "reported_total_count": 1,
+      "listed_notices_per_page": [
+        0
+      ]
+    },
+    {
+      "id": "70788007",
+      "title": "바바리안이 농사를 잘함",
+      "url": "https://page.kakao.com/content/70788007/?tab_type=notice",
+      "checked_at": "2026-11-13T11:33:16.515714+09:00",
+      "complete": true,
+      "page_count": 1,
+      "notice_count": 1,
+      "event_banner_count": 0,
+      "matched_promotions": [],
+      "promotion_before": "",
+      "action": "keep_blank_until_Nov30",
+      "notices": [
+        {
+          "uid": 235551,
+          "title": "연재주기 안내드립니다.",
+          "created_at": "2026-09-23T14:37:06+09:00",
+          "modified_at": "2026-09-23T14:37:06+09:00",
+          "url": "https://page.kakao.com/content/70788007/?tab_type=notice",
+          "body_sha256": "6591c1a45107c04775e3f073233d48c1c98131b7f706870edd89fadde8658c5a"
+        }
+      ],
+      "reported_total_count": 0,
+      "listed_notices_per_page": [
+        0
+      ]
+    }
+  ]
+}
