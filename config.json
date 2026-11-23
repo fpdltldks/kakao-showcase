@@ -1,7 +1,8 @@
 {
-  "url": "https://page.kakao.com/landing/series/list/page/landing/16142/",
-  "start_date": "2026-10-24",
-  "end_date": "2026-11-23",
+  "url": "https://page.kakao.com/landing/series/list/page/landing/16143/",
+  "start_date": "2026-11-23",
+  "end_date": "2026-12-24",
   "delay": 2.0,
   "max_pages": 100
 }
+
