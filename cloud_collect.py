@@ -54,13 +54,19 @@ def render_existing(cfg: dict) -> None:
     dashboard_history.render_html(HTML, state)
 
 
-def already_collected_today() -> bool:
+def already_collected_today(url: str) -> bool:
     if not DATA.exists():
         return False
     try:
         state = json.loads(DATA.read_text(encoding="utf-8"))
         today = datetime.now(collector.KST).strftime("%Y-%m-%d")
-        return bool(state.get("times")) and str(state["times"][-1]).startswith(today + " ")
+        target = dashboard_history.normalize_url(url)
+        return any(
+            len(capture) > 5
+            and str(capture[0]).startswith(today + " ")
+            and dashboard_history.normalize_url(capture[5]) == target
+            for capture in state.get("captures", [])
+        )
     except Exception:
         return False
 
@@ -78,7 +84,7 @@ def run(force_same_day: bool = False) -> int:
         print("수집 기간 밖이므로 네트워크 수집은 건너뜁니다.")
         render_existing(cfg)
         return 0
-    if already_collected_today() and not force_same_day:
+    if already_collected_today(cfg["url"]) and not force_same_day:
         print("오늘 수집 기록이 이미 있어 중복 수집을 건너뜁니다.")
         render_existing(cfg)
         return 0
@@ -101,3 +107,4 @@ if __name__ == "__main__":
     except Exception as exc:
         print("수집 실패:", exc, file=sys.stderr)
         raise SystemExit(1)
+
